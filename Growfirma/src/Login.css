@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background: #020d1f;
+  font-size: 16px;
+}
+
+/* MAIN CONTAINER */
+.container {
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+
+  margin: 20px;   /* 🔥 equal space on all sides */
+
+  display: flex;
+  flex-wrap: wrap;   /* 🔥 allows stacking on small screens */
+
+  
+  border-radius: 10px;   /* optional (looks like your design) */
+
+  box-sizing: border-box;
+}
+
+
+
+
+.left, .right {
+  flex: 1;
+  min-width: 300px;   /* prevents breaking */
+}
+
+
+
+
+/* LEFT SIDE */
+.left {
+  flex: 1;
+  display: flex;              /* 🔥 REQUIRED */
+  flex-direction: column;     
+  justify-content: center;    /* 🔥 vertical center */
+  
+  padding: 60px;
+  color: white;
+}
+
+.logo {
+  position: absolute;   /* 🔥 key change */
+  top: 30px;
+  left: 40px;
+  font-size: 20px;
+  color: white;
+}
+
+.logo span {
+  color: #7dff00;
+}
+
+.left h1 {
+  font-size: clamp(30px, 5vw, 60px); 
+  font-weight: 700;
+   
+  line-height: 1.2;   /* 🔥 proper spacing between lines */
+  letter-spacing: 1px;
+  color: #ffffff;
+   font-style: italic;   /* 🔥 italic */
+}
+.left h2 {
+  font-size: clamp(30px, 5vw, 60px);
+  color: #8cff00;
+  margin-top: -10px;
+}
+
+/* LEFT HEADINGS */
+.left h1,
+.left h2 {
+  font-size: clamp(30px, 5vw, 60px); /* 30px → 60px */
+  font-weight: 700;
+}
+
+
+/* RIGHT SIDE */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 420px;   /* instead of fixed 350px */
+  padding: 30px;
+  background: #0a1a2f;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+
+  /* Base glow */
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+
+  /* Animation */
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* ✨ Smooth glow breathing */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 
+      0 0 6px 1px rgba(74, 108, 255, 0.15),
+      0 0 12px 3px rgba(74, 108, 255, 0.1);
+  }
+
+  50% {
+    box-shadow: 
+      0 0 10px 2px rgba(74, 108, 255, 0.25),
+      0 0 20px 5px rgba(74, 108, 255, 0.15);
+  }
+
+  100% {
+    box-shadow: 
+      0 0 6px 1px rgba(74, 108, 255, 0.15),
+      0 0 12px 3px rgba(74, 108, 255, 0.1);
+  }
+
+}
+
+.card {
+  border-radius: 25px;
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #ffffff;   /* pure white */
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 0;
+
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+/* SOCIAL BUTTONS */
+.social {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.social button {
+  width: 48%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #2a3a55;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* OR TEXT */
+.or {
+  margin: 15px 0;
+  color: #aaa;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: transparent;
+  border: 1px solid #2a3a55;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+/* PASSWORD FIELD */
+.password {
+  position: relative;
+}
+
+.password span {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  cursor: pointer;
+}
+
+/* FORGOT */
+.forgot {
+  text-align: right;
+  font-size: 12px;
+  color: #7dff00;
+  cursor: pointer;
+}
+
+/* SIGN IN BUTTON */
+.signin {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #7dff00;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* SIGNUP */
+.signup {
+  margin-top: 15px;
+  font-size: 12px;
+  font-size: 14px;
+}
+
+.signup span {
+  color: #7dff00;
+  cursor: pointer;
+}
+
+
+
+
+.password span {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+  font-size: 18px;
+}
+
+.password span:hover {
+  color: #7dff00;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Small Tablets & Large Phones (≤ 768px) */
+@media (max-width: 768px) {
+  .left h1,
+  .left h2 {
+    font-size: 40px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .left h1,
+  .left h2 {
+    font-size: 28px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  .signin {
+    padding: 12px;
+  }
+}
+
+/* Large Screens (≥ 1200px) */
+@media (min-width: 1200px) {
+  .card {
+    max-width: 450px;
+  }
+
+  .left h1,
+  .left h2 {
+    font-size: 60px;
+  }
+}

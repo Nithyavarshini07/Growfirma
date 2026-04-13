@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0b1320;
+  color: white;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* LEFT */
+.left {
+   flex: 1;
+  padding: 40px;   /* clean spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+}
+.left {
+  padding-left: 2%;   /* instead of negative margin */
+}
+
+.left h1,
+.left h2 {
+  margin-left: 0;     /* remove negative margin */
+}
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.grow {
+  color: #8cff00;
+}
+
+.Firma {
+  color: #4a6cff;
+}
+
+.logo img {
+  width: 180px;  /* increased size */
+  height: auto;
+}
+
+/* TEXT */
+.left h1 {
+  font-size: clamp(30px, 5vw, 60px);
+}
+
+.left h2 {
+  font-size: clamp(30px, 5vw, 60px);
+  color: #8cff00;
+  margin-top: -10px;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+    width: 100%;
+  max-width: 420px;   /* instead of fixed 350px */
+  padding: 30px;
+  background: #0a1a2f;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+
+  /* 🔥 glow animation */
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
+@keyframes glowPulse {
+  0% {
+    box-shadow: 
+      0 0 6px 1px rgba(74, 108, 255, 0.15),
+      0 0 12px 3px rgba(74, 108, 255, 0.1);
+  }
+
+  50% {
+    box-shadow: 
+      0 0 10px 2px rgba(74, 108, 255, 0.25),
+      0 0 20px 5px rgba(74, 108, 255, 0.15);
+  }
+
+  100% {
+    box-shadow: 
+      0 0 6px 1px rgba(74, 108, 255, 0.15),
+      0 0 12px 3px rgba(74, 108, 255, 0.1);
+  }
+}
+
+/* TITLE */
+.form-box h2 {
+  text-align: center;
+  padding: 10px 0;        /* space above & below */
+  letter-spacing: 1px;    /* space between letters */
+  margin-bottom: 20px;    /* space below title */
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  gap: 10px;
+}
+
+.social button {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.social button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.social img {
+  width: 18px;
+  height: 18px;
+}
+.or {
+  text-align: center;
+  width: 100%;   /* ensures full width */
+  display: block;
+}
+/* INPUT ROW */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+/* INPUT COMMON */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box; /* ✅ important fix */
+}
+
+/* FIX ROW INPUTS */
+.row input {
+  flex: 1; /* ✅ makes firstname & lastname equal */
+}
+
+/* PASSWORD */
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 45px;
+}
+
+/* PERFECT ICON */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777; /* 🔥 FIXED COLOR */
+  font-size: 14px;
+}
+
+.toggle-password:hover {
+  color: #8cff00;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center; /* Vertically centers the checkbox with the text */
+  gap: 12px;
+  margin: 15px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  width: auto;      /* Prevents the checkbox from stretching */
+  margin: 0;        /* Removes default margins */
+  cursor: pointer;
+  transform: scale(1.2); /* Optional: makes the checkbox slightly larger to match the UI */
+}
+
+.checkbox label {
+  cursor: pointer;
+  user-select: none; /* Prevents text highlighting when clicking */
+}
+
+.checkbox span {
+  color: #8cff00;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.create-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: #8cff00;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-btn:hover {
+  opacity: 0.85;
+}
+
+/* LOGIN */
+.login {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login span {
+  color: #8cff00;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Small Tablets & Large Phones (≤ 768px) */
+@media (max-width: 768px) {
+  .left h1,
+  .left h2 {
+    font-size: 40px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .left h1,
+  .left h2 {
+    font-size: 28px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .form-box {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  .create-btn {
+    padding: 12px;
+  }
+}
+
+/* Large Screens (≥ 1200px) */
+@media (min-width: 1200px) {
+  .form-box {
+    max-width: 450px;
+  }
+
+  .left h1,
+  .left h2 {
+    font-size: 60px;
+  }
+}

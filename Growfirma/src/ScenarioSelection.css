@@ -1,0 +1,247 @@
+/* SAME FONT SYSTEM */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0b1320;
+  color: white;
+}
+
+/* WRAPPER */
+.scenario-wrapper {
+  min-height: 100vh;
+  padding: 30px 40px;
+}
+
+/* NAVBAR */
+.scenario-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* LOGO */
+.logo {
+  font-size: 20px;
+}
+
+.grow {
+  color: #8cff00;
+}
+
+.firma {
+  color: #4a6cff;
+}
+
+/* STEPS */
+.steps span {
+  margin: 0 20px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.steps .active {
+  color: #8cff00;
+  border-bottom: 2px solid #8cff00;
+  padding-bottom: 4px;
+}
+
+/* MAIN BOX */
+.scenario-box {
+  background: #0a1a2f;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+/* TITLE */
+.scenario-box h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.desc {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+/* GRID */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.scenario-card {
+  background: #13233a;
+  padding: 18px;
+  border-radius: 12px;
+  position: relative;
+  transition: 0.3s;
+  min-height: 110px;
+}
+
+.scenario-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.scenario-card p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* HOVER */
+.scenario-card:hover {
+  transform: translateY(-3px);
+}
+
+/* SELECTED */
+.scenario-card.selected {
+  border: 2px solid #8cff00;
+  box-shadow: 0 0 10px rgba(140, 255, 0, 0.6);
+}
+
+/* TICK */
+.tick {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #8cff00;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+.scenario-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid #2a3a55;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.continue-btn {
+  background: #8cff00;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: black;
+  box-shadow: 0 0 10px rgba(140, 255, 0, 0.6);
+}
+.scenario-nav .logo {
+  position: static;   /* 🔥 removes absolute positioning */
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 40px;   /* 🔥 clean spacing like image */
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Small Tablets & Large Phones (≤ 768px) */
+@media (max-width: 768px) {
+  .left h1,
+  .left h2 {
+    font-size: 40px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .left h1,
+  .left h2 {
+    font-size: 28px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  .signin {
+    padding: 12px;
+  }
+}
+
+/* Large Screens (≥ 1200px) */
+@media (min-width: 1200px) {
+  .card {
+    max-width: 450px;
+  }
+
+  .left h1,
+  .left h2 {
+    font-size: 60px;
+  }
+}
