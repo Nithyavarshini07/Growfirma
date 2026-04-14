@@ -36,13 +36,13 @@ function Login() {
           <h2><i>Welcome Back!</i></h2>
 
           <div className="social">
-            <button onClick={() => socialLogin("Google")}>
+            <button onClick={() => socialLogin("google")}>
               <img src={google} alt="google" />
               Google
             </button>
 
-            <button onClick={() => socialLogin("LinkedIn")}>
-              <img src={linkedin} alt="linkedIn" />
+            <button onClick={() => socialLogin("linkedin")}>
+              <img src={linkedin} alt="linkedin" />
               LinkedIn
             </button>
           </div>
