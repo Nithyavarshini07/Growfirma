@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./Login";
-import CreateAccount from "./CreateAccount";
-import ForgotPassword from "./ForgotPassword";
-import ResetPassword from "./ResetPassword";
-import ScenarioSelection from "./ScenarioSelection";
+import Login from "./Login.jsx";
+import CreateAccount from "./CreateAccount.jsx";
+import ForgotPassword from "./ForgotPassword.jsx";
+import ResetPassword from "./ResetPassword.jsx";
+import ScenarioSelection from "./ScenarioSelection.jsx";
 
 function App() {
   return (
