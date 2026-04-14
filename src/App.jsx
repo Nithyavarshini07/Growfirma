@@ -4,6 +4,9 @@ import CreateAccount from "./CreateAccount";
 import ForgotPassword from "./ForgotPassword";
 import ResetPassword from "./ResetPassword";
 import ScenarioSelection from "./ScenarioSelection";
+import RegisterFirst from "./RegisterFirst";
+
+
 
 function App() {
   return (
@@ -13,6 +16,7 @@ function App() {
       <Route path="/forgot" element={<ForgotPassword />} />
       <Route path="/reset" element={<ResetPassword />} />
       <Route path="/scenario" element={<ScenarioSelection />} />
+      <Route path="/register-first" element={<RegisterFirst />} />
     </Routes>
   );
 }

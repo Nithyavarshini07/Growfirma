@@ -1,0 +1,133 @@
+body {
+  background: #08121f;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.rf-container {
+  padding: 30px;
+}
+
+/* NAV */
+.rf-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.grow {
+  color: #8cff00;
+}
+.firma {
+  color: #4a6cff;
+}
+
+.steps span {
+  margin: 0 20px;
+  color: #aaa;
+}
+
+.steps .active {
+  color: #8cff00;
+  border-bottom: 2px solid #8cff00;
+}
+
+/* MAIN */
+.rf-main {
+  display: flex;
+  gap: 30px;
+}
+
+/* LEFT */
+.rf-left {
+  flex: 2;
+}
+
+.timeline {
+  border-left: 2px solid #2a3a55;
+  padding-left: 20px;
+}
+
+/* CARDS */
+.rf-card {
+  background: #0f1f35;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.rf-card.highlight {
+  border: 2px solid #8cff00;
+  box-shadow: 0 0 15px rgba(140,255,0,0.5);
+}
+
+.rf-card.optional {
+  border: 1px solid #ffaa00;
+}
+
+/* TAGS */
+.tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.high {
+  background: #8cff00;
+  color: black;
+}
+
+.mid {
+  background: #00c2ff;
+}
+
+.low {
+  background: orange;
+}
+
+/* RIGHT */
+.rf-right {
+  flex: 1;
+}
+
+/* SUCCESS */
+.success-box {
+  background: #0f1f35;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.circle {
+  margin-top: 10px;
+  font-size: 28px;
+  color: #8cff00;
+}
+
+/* INFO */
+.info-box {
+  background: #0f1f35;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.next-btn {
+  background: #8cff00;
+  color: black;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}

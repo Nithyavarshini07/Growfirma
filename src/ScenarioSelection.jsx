@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "./assets/logo.png";
 
+
 function ScenarioSelection() {
   const cards = [
     { title: "Fundraising First", desc: "Optimized for rapid scale and VC Management" },
@@ -58,6 +59,11 @@ const goBackToLogin = () => {
               className={`scenario-card ${hoveredIndex === i ? "selected" : ""}`}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => {
+    if (card.title === "Register First") {
+      navigate("/register-first");
+    }
+  }}
             >
               <h3>{card.title}</h3>
               <p>{card.desc}</p>
