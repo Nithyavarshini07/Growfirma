@@ -1,7 +1,7 @@
 import "./ScenarioSelection.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import logo from "./assets/logo.png";
+
 
 function ScenarioSelection() {
   const cards = [
@@ -31,7 +31,7 @@ const goBackToLogin = () => {
       {/* TOP NAV */}
       <div className="scenario-nav">
        <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src="/assets/logo.png" alt="logo" />
         </div>
 
         <div className="steps">

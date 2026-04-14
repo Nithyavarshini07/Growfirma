@@ -1,8 +1,6 @@
 import "./ForgotPassword.css";
 import { Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
-import lockImg from "./assets/lock.png";
-import logo from "./assets/logo.png";
 
 function ForgotPassword() {
   return (
@@ -11,7 +9,7 @@ function ForgotPassword() {
       {/* LEFT SIDE */}
       <div className="left">
          <div className="logo">
-         <img src={logo} alt="logo" />
+         <img src="/assets/logo.png" alt="logo" />
           </div>
 
         <h1>
@@ -25,7 +23,7 @@ function ForgotPassword() {
         <div className="card">
 
           <div className="lock-img">
-          <img src={lockImg} alt="lock" />
+          <img src="/assets/lock.png" alt="lock" />
           </div>
 
           <h2>Forgot Password</h2>

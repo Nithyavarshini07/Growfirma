@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "./assets/logo.png";
-import google from "./assets/google.png";
-import linkedin from "./assets/linkedin.png";
+
 
 const CreateAccount = () => {
     const navigate = useNavigate();
@@ -43,7 +41,7 @@ const CreateAccount = () => {
       {/* LEFT SIDE */}
       <div className="left">
         <div className="logo">
-          <img src={logo} alt="logo" />
+         <img src="/assets/logo.png" alt="logo" />
         </div>
 
         <h1><i>TURNING IDEAS</i></h1>
@@ -58,12 +56,12 @@ const CreateAccount = () => {
 
           <div className="social">
             <button onClick={() => socialLogin("google")}>
-              <img src={google} alt="google" />
+              <img src="/assets/google.png" alt="google" />
               Google
             </button>
 
             <button onClick={() => socialLogin("linkedin")}>
-             <img src={linkedin} alt="linkedin" />
+             <img src="/assets/linkedin.png" alt="linkedin" />
               LinkedIn
             </button>
           </div>
