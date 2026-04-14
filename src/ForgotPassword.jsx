@@ -1,7 +1,7 @@
 import "./ForgotPassword.css";
 import { Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
-import lockImg from "./assets/Lock.png";
+import lockImg from "./assets/lock.png";
 import logo from "./assets/logo.png";
 
 function ForgotPassword() {
