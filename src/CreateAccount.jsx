@@ -58,12 +58,12 @@ const CreateAccount = () => {
 
           <div className="social">
             <button onClick={() => socialLogin("Google")}>
-              <img src={google} alt="Google" />
+              <img src={google} alt="google" />
               Google
             </button>
 
             <button onClick={() => socialLogin("LinkedIn")}>
-             <img src={linkedin} alt="LinkedIn" />
+             <img src={linkedin} alt="linkedIn" />
               LinkedIn
             </button>
           </div>

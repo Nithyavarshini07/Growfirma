@@ -1,12 +1,11 @@
 import { Routes, Route } from "react-router-dom";
+
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
 import ForgotPassword from "./ForgotPassword";
 import ResetPassword from "./ResetPassword";
 import ScenarioSelection from "./ScenarioSelection";
 import RegisterFirst from "./RegisterFirst";
-
-
 
 function App() {
   return (
