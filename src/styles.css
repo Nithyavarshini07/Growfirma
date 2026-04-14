@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-height: 100vh;
 
 }
 
@@ -14,12 +15,15 @@ body {
   color: white;
   padding: 0;
   overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* LAYOUT */
 .container {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
   width: 100%;
   overflow: hidden;
 }
@@ -27,7 +31,8 @@ body {
 /* LEFT */
 .left {
    flex: 1;
-  padding: 40px;   /* clean spacing */
+  padding: 20px 5%;
+  overflow: hidden;   /* clean spacing */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,12 +71,14 @@ body {
 /* TEXT */
 .left h1 {
   font-size: clamp(30px, 5vw, 60px);
+  line-height: 1.1;
 }
 
 .left h2 {
   font-size: clamp(30px, 5vw, 60px);
   color: #8cff00;
   margin-top: -10px;
+  line-height: 1.1;
 }
 
 /* RIGHT */
@@ -84,12 +91,13 @@ body {
 
 .form-box {
     width: 100%;
-  max-width: 420px;   /* instead of fixed 350px */
-  padding: 30px;
   background: #0a1a2f;
   border-radius: 20px;
   color: white;
   text-align: center;
+   padding: 20px;
+  max-height: 90vh;
+  overflow: hidden;
 
   /* 🔥 glow animation */
   animation: glowPulse 2.5s infinite ease-in-out;
@@ -170,13 +178,14 @@ body {
 /* INPUT COMMON */
 input {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 10px;
+  margin: 5px 0;
   background: transparent;
   border: 1px solid #333;
   border-radius: 10px;
   color: white;
   box-sizing: border-box; /* ✅ important fix */
+
 }
 
 /* FIX ROW INPUTS */
@@ -343,3 +352,4 @@ input {
     font-size: 60px;
   }
 }
+
