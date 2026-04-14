@@ -25,7 +25,7 @@ function ForgotPassword() {
         <div className="card">
 
           <div className="lock-img">
-          <img src={lockImg} alt="Lock" />
+          <img src={lockImg} alt="lock" />
           </div>
 
           <h2>Forgot Password</h2>
