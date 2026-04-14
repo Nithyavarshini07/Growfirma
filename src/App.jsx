@@ -1,9 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./Login.jsx";
-import CreateAccount from "./CreateAccount.jsx";
-import ForgotPassword from "./ForgotPassword.jsx";
-import ResetPassword from "./ResetPassword.jsx";
-import ScenarioSelection from "./ScenarioSelection.jsx";
+
+import Login from "./Login";
+import CreateAccount from "./CreateAccount";
+import ForgotPassword from "./ForgotPassword";
+import ResetPassword from "./ResetPassword";
+import ScenarioSelection from "./ScenarioSelection";
+import RegisterFirst from "./RegisterFirst";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Route path="/forgot" element={<ForgotPassword />} />
       <Route path="/reset" element={<ResetPassword />} />
       <Route path="/scenario" element={<ScenarioSelection />} />
+      <Route path="/register-first" element={<RegisterFirst />} />
     </Routes>
   );
 }

@@ -1,0 +1,394 @@
+body {
+  background: #08121f;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+}
+
+.rf-container {
+  padding: 30px;
+  min-height: 100vh;
+  padding-bottom: 100px; /* 🔥 bottom space */
+}
+
+/* NAV */
+.rf-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #08121f;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 130px;
+}
+
+.grow {
+  color: #8cff00;
+}
+
+.firma {
+  color: #4a6cff;
+}
+
+/* STEPS */
+.steps {
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.steps span {
+  white-space: nowrap;
+  color: #aaa;
+}
+
+.steps .active {
+  color: #8cff00;
+  border-bottom: 2px solid #8cff00;
+}
+
+/* MAIN */
+.rf-main {
+  display: flex;
+  gap: 30px;
+}
+
+.rf-left {
+  flex: 2;
+}
+
+.rf-right {
+  flex: 1;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 60px;
+  .timeline {
+  padding-bottom: 80px;
+}
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  height: calc(100% + 120px);  /* 🔥 FORCE LINE TO EXTEND */
+
+  width: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    #8cff00,
+    #4a6cff,
+    #8cff00,
+    #4a6cff,
+    orange
+  );
+
+  border-radius: 10px;
+}
+
+/* CARD */
+.rf-card {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* SINGLE DOT SYSTEM (FIXED) */
+.rf-card::before {
+  content: "";
+  position: absolute;
+
+  left: 30px;   /* SAME as timeline */
+  top: 25px;
+
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  background: white;
+
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* REMOVE DOUBLE BORDER BUG */
+.rf-card.optional {
+  border: none;
+}
+
+/* TAGS */
+.tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.high {
+  background: #8cff00;
+  color: black;
+}
+
+.mid {
+  background: #00c2ff;
+}
+
+.low {
+  background: orange;
+}
+
+/* BOXES */
+.inner-box {
+  background: #0a1a2f;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #1f2f45;
+}
+
+/* GREEN GLOW */
+.rf-card.highlight .inner-box {
+  border: 2px solid #8cff00;
+  box-shadow: 0 0 15px rgba(140,255,0,0.5);
+}
+
+/* ORANGE GLOW (FIXED SINGLE BOX) */
+.rf-card.optional .inner-box {
+  border: 2px solid orange;
+  box-shadow: 0 0 12px rgba(255,165,0,0.5);
+}
+
+/* TEXT */
+.rf-card h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #bbb;
+  margin: 6px 0;
+}
+
+.card-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.card-list,
+.card-sublist {
+  padding-left: 18px;
+}
+
+.card-list li::marker {
+  color: #8cff00;
+}
+
+.card-list li,
+.card-sublist li {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #ddd;
+}
+
+/* RIGHT PANEL */
+.success-box,
+.info-box {
+  background: #0f1f35;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.circle {
+  margin-top: 10px;
+  font-size: 28px;
+  color: #8cff00;
+}
+
+.next-btn {
+  background: #8cff00;
+  color: black;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+/* TITLE */
+.rf-left h2 {
+  color: #8cff00;
+  font-style: italic;
+}
+
+.inner-box {
+  position: relative;
+}
+
+.rf-card {
+  margin-bottom: 35px;
+}
+/* 🔥 REMOVE ALL TIMELINE DOTS */
+.rf-card::before {
+  display: none !important;
+}
+.rf-card:last-child {
+  margin-bottom: 120px;   /* 🔥 BIG SPACE BELOW ORANGE BOX */
+}
+.timeline {
+  padding-bottom: 80px;
+}
+.rf-card.optional {
+  margin-bottom: 120px !important;  /* 🔥 FORCE SPACE */
+}
+/* 🔵 BLUE BOX */
+.blue-box {
+  border: 2px solid #4a6cff;
+  box-shadow: 0 0 12px rgba(74,108,255,0.5);
+}
+.info-box p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+/* Make "What is this?" green */
+.info-box h4 {
+  color: #8cff00;
+}
+/* REMOVE NORMAL BULLETS */
+.tick-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ADD TICK */
+.tick-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: #ddd;
+  font-size: 13px;
+}
+
+/* TICK ICON */
+.tick-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #eeeeee;
+  font-size: 14px;
+}
+/* CONTAINER AT BOTTOM */
+.next-container {
+  position: fixed;   /* 🔥 sticks to bottom */
+  bottom: 20px;
+  right: 30px;       /* right side (like modern UI) */
+}
+
+/* SMALL GLOW BUTTON */
+.next-btn {
+  background: #8cff00;
+  color: black;
+  padding: 10px 18px;   /* 🔥 smaller size */
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 0 12px rgba(140,255,0,0.6);  /* 🔥 glow */
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(140,255,0,0.9);
+}
+.success-box {
+  background: #0f1f35;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.progress-circle {
+  width: 80px;
+  height: 80px;
+  margin: 15px auto;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #8cff00;
+
+  /* 🔥 INVERTED: shows remaining (11%) */
+  background: conic-gradient(
+    rgba(255,255,255,0.08) 0% 89%,  /* completed faded */
+    #8cff00 89% 100%               /* remaining highlighted */
+  );
+
+  position: relative;
+}
+
+/* INNER CUT */
+.progress-circle {
+  width: 80px;
+  height: 80px;
+  margin: 15px auto;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #8cff00;
+
+  position: relative;
+
+  /* 🔥 GREEN INVERTED (remaining part only) */
+  background: conic-gradient(
+    rgba(255,255,255,0.08) 0% 89%,  /* faded completed */
+    #8cff00 89% 100%               /* green remaining */
+  );
+}
+
+/* INNER CUT */
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #0f1f35;
+  border-radius: 50%;
+}
+
+/* TEXT */
+.progress-circle span {
+  position: relative;
+  z-index: 2;
+}
