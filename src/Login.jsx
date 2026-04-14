@@ -2,9 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
-import logo from "./assets/logo.png";
-import google from "./assets/google.png";
-import linkedin from "./assets/linkedin.png";
 
 function Login() {
     const navigate = useNavigate();
@@ -24,7 +21,7 @@ function Login() {
     <div className="container">
       <div className="left">
         <div className="logo">
-                  <img src={logo} alt="logo" />
+                  <img src="/assets/logo.png" alt="logo" />
                 </div>
 
         <h1><i>TURNING IDEAS</i></h1>
@@ -36,13 +33,13 @@ function Login() {
           <h2><i>Welcome Back!</i></h2>
 
           <div className="social">
-            <button onClick={() => socialLogin("Google")}>
-              <img src={google} alt="google" />
+            <button onClick={() => socialLogin("google")}>
+              <img src="/assets/google.png" alt="google" />
               Google
             </button>
 
-            <button onClick={() => socialLogin("LinkedIn")}>
-              <img src={linkedin} alt="linkedIn" />
+            <button onClick={() => socialLogin("linkedin")}>
+             <img src="/assets/linkedin.png" alt="linkedin" />
               LinkedIn
             </button>
           </div>
