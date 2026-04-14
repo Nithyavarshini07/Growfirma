@@ -1,7 +1,7 @@
 import "./ResetPassword.css";
 import { useNavigate } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
-import lockImg from "./assets/Lock.png";
+import lockImg from "./assets/lock.png";
 import logo from "./assets/logo.png";
 
 function ResetPassword() {
@@ -31,7 +31,7 @@ function ResetPassword() {
         <div className="card">
 
          <div className="lock-img">
-                   <img src={lockImg} alt="Lock" />
+                   <img src={lockImg} alt="lock" />
                    </div>
 
           <h2>Reset Password</h2>
