@@ -1,6 +1,7 @@
 import "./RegisterFirst.css";
 import { useNavigate } from "react-router-dom";
 
+
 function RegisterFirst() {
   const navigate = useNavigate();
 
@@ -10,12 +11,13 @@ function RegisterFirst() {
       {/* TOP NAV */}
       <div className="rf-nav">
         <div className="logo">
-          <span className="grow">Grow</span>
-          <span className="firma">Firma</span>
-        </div>
+  <img src="/assets/logo.png" alt="GrowFirma Logo" />
+</div>
 
         <div className="steps">
-          <span>Scenario Selection</span>
+          <span onClick={() => navigate("/scenario")} className="clickable">
+           Scenario Selection
+          </span>
           <span className="active">Company Profile</span>
           <span>Goals & Needs</span>
         </div>
@@ -152,28 +154,30 @@ function RegisterFirst() {
   </p>
 </div>
 
-         <div className="info-box">
-  <h4>What is this?</h4>
+  <div className="info-box">
+    <div className="info-title">
+    <img src="/assets/what.png" alt="info" className="box-icon" />
+    <h4>What is this?</h4>
+     </div>
+ 
+  
 
   <p>
     This scenario is for founders who want to legally set up their company first, before
     building, marketing, or selling anything.
-
-
-    
   </p>
 
   <p>
-   
-   
-   
     You already know you want a company now you want to do it correctly
   </p>
 
 </div>
 
           <div className="info-box">
-  <h4>Who is this for?</h4>
+            <div className="info-title">
+    <img src="/assets/whatfor.png" alt="users" className="box-icon" />
+    <h4>Who is this for?</h4>
+  </div>
 
   <ul className="tick-list">
     <li>First-time founders</li>
@@ -188,6 +192,12 @@ function RegisterFirst() {
     Next <span className="bolt">⚡</span>
   </button>
 </div>
+
+ <img
+    src="/assets/blank.png"
+    alt="What is this"
+    className="info-img"
+  />
 
         </div>
       </div>

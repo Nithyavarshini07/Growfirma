@@ -28,10 +28,14 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: auto;
 }
 
 .logo img {
-  width: 130px;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .grow {
@@ -269,11 +273,20 @@ body {
 .info-box p {
   margin-bottom: 10px;
   line-height: 1.5;
+   font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
 }
 /* Make "What is this?" green */
+
 .info-box h4 {
-  color: #8cff00;
+  font-size: 20px;
+  font-weight: 700;   /* 🔥 makes it strong */
+  color: #ffffff;     /* or #f5f5f5 for softer white */
+  font-family: 'Inter', sans-serif;
 }
+
+
 /* REMOVE NORMAL BULLETS */
 .tick-list {
   list-style: none;
@@ -391,4 +404,44 @@ body {
 .progress-circle span {
   position: relative;
   z-index: 2;
+}
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: #8cff00;
+  text-decoration: underline;
+}
+.info-img {
+  width: 100%;          /* fits inside box */
+  max-height: 180px;    /* controls size */
+  object-fit: cover;    /* keeps proper ratio */
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.info-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+   font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+.info-box p,
+.info-box li {
+  font-size: 18px !important;
+  font-family: 'Inter', sans-serif !important;
+  line-height: 1.6;
+    margin-bottom: 10px;
+  line-height: 1.5;
+
+
+}
+
+.box-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }

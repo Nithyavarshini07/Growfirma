@@ -24,14 +24,18 @@ function ScenarioSelection() {
     navigate("/login");
   };
 
-  const handleContinue = () => {
-    if (selectedIndex === null) return;
+ const handleContinue = () => {
+  if (selectedIndex === null) {
+    alert("Please select a scenario");
+    return;
+  }
 
-    if (cards[selectedIndex].title === "Register First") {
-      navigate("/register-first");
-    }
-  };
+  const selectedCard = cards[selectedIndex];
 
+  if (selectedCard.title === "Register First") {
+    navigate("/register-first");
+  }
+};
   return (
     <div className="scenario-wrapper">
 
