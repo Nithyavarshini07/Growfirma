@@ -24,18 +24,35 @@ function ScenarioSelection() {
     navigate("/login");
   };
 
- const handleContinue = () => {
-  if (selectedIndex === null) {
-    alert("Please select a scenario");
-    return;
-  }
+  const handleContinue = () => {
+    if (selectedIndex === null) {
+      alert("Please select a scenario");
+      return;
+    }
 
-  const selectedCard = cards[selectedIndex];
+    const selectedCard = cards[selectedIndex];
 
-  if (selectedCard.title === "Register First") {
-    navigate("/register-first");
-  }
-};
+    if (selectedCard.title === "MVP First") {
+      navigate("/mvp-first");
+    }
+
+    if (selectedCard.title === "Side - hustle") {
+      navigate("/side-hustle");
+    }
+
+    if (selectedCard.title === "Register First") {
+      navigate("/register-first");
+    }
+
+    if (selectedCard.title === "Exit -Oriented") {
+      navigate("/exit-oriented");
+    }
+
+    if (selectedCard.title === "Revenue First") {
+      navigate("/revenue-first");
+    }
+  };
+
   return (
     <div className="scenario-wrapper">
 
@@ -70,7 +87,6 @@ function ScenarioSelection() {
               className={`scenario-card ${selectedIndex === i ? "selected" : ""}`}
               onClick={() => setSelectedIndex(i)}
             >
-
               {/* ICON */}
               <div className="icon-box">
                 <img
@@ -81,10 +97,8 @@ function ScenarioSelection() {
               </div>
 
               {/* TEXT */}
-              <div className="text">
-                <h3>{card.title}</h3>
-                <p>{card.desc}</p>
-              </div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
 
               {/* TICK */}
               {selectedIndex === i && (
@@ -92,7 +106,6 @@ function ScenarioSelection() {
                   <img src="/assets/tick.png" alt="tick" />
                 </div>
               )}
-
             </div>
           ))}
         </div>
