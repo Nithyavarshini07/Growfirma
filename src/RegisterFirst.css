@@ -1,13 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
 body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
   background: #08121f;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  overflow-y: auto;
+
+  overflow-x: hidden;
+  overflow-y: auto;   /* ✅ correct */
+}
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
 }
 
 .rf-container {
   padding: 30px;
   min-height: 100vh;
+  overflow: visible;
   padding-bottom: 100px; /* 🔥 bottom space */
 }
 
@@ -166,6 +177,8 @@ body {
   padding: 20px;
   margin-top: 10px;
   border: 1px solid #1f2f45;
+
+  position: relative;   /* 🔥 important */
 }
 
 /* GREEN GLOW */
@@ -214,6 +227,17 @@ body {
   color: #ddd;
 }
 
+.card-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 30px;     /* 🔥 increased from 24px */
+  height: 30px;
+
+  object-fit: contain;
+}
+
 /* RIGHT PANEL */
 .success-box,
 .info-box {
@@ -238,11 +262,18 @@ body {
   border: none;
   font-weight: bold;
 }
-
+.desc {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
 /* TITLE */
 .rf-left h2 {
+  font-size: 28px;        /* 🔥 bigger */
+  font-weight: 700;
   color: #8cff00;
-  font-style: italic;
+
+  margin-bottom: 10px;
 }
 
 .inner-box {
@@ -286,7 +317,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-
 /* REMOVE NORMAL BULLETS */
 .tick-list {
   list-style: none;
@@ -311,24 +341,36 @@ body {
   font-size: 14px;
 }
 /* CONTAINER AT BOTTOM */
-.next-container {
-  position: fixed;   /* 🔥 sticks to bottom */
-  bottom: 20px;
-  right: 30px;       /* right side (like modern UI) */
+/* SMALL GLOW BUTTON */
+.next-floating {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+
+  z-index: 2147483647 !important;  /* 🔥 MAX possible */
+
+  pointer-events: auto;
 }
 
-/* SMALL GLOW BUTTON */
 .next-btn {
   background: #8cff00;
   color: black;
-  padding: 10px 18px;   /* 🔥 smaller size */
-  border-radius: 12px;
-  border: none;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
 
-  box-shadow: 0 0 12px rgba(140,255,0,0.6);  /* 🔥 glow */
-  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.next-icon {
+  width: 18px;
+}
+
+.rf-container {
+  padding-left: 80px; /* 🔥 pushes content right */
 }
 
 /* HOVER EFFECT */
@@ -444,4 +486,50 @@ body {
   width: 22px;
   height: 22px;
   object-fit: contain;
+}
+.side-icons {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 60vh;                 /* 🔥 slightly taller */
+  width: 70px;
+
+  background: linear-gradient(
+    180deg,
+    #0f1f35,
+    #0a1628
+  );
+
+  padding: 25px 10px;
+  border-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,0.7),
+    inset 0 0 10px rgba(255,255,255,0.05);
+}
+.side-icons img {
+  width: 30px;
+  height: 30px;
+
+  opacity: 0.8;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+/* ACTIVE (CLICKED) */
+.active-icon {
+  filter: brightness(0) saturate(100%)
+          invert(77%) sepia(97%)
+          saturate(1000%) hue-rotate(50deg)
+          brightness(110%) contrast(110%)
+          drop-shadow(0 0 10px #8cff00);
 }
