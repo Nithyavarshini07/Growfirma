@@ -23,6 +23,7 @@ function ScenarioSelection() {
   const goBackToLogin = () => {
     navigate("/login");
   };
+<<<<<<< HEAD
 
   const handleContinue = () => {
     if (cards[selectedIndex]?.title === "MVP First") {
@@ -35,7 +36,21 @@ function ScenarioSelection() {
       navigate("/register-first");
     }
   };
+=======
+>>>>>>> a848bfe543b4618b1d86c2717f626b66eebe7680
 
+ const handleContinue = () => {
+  if (selectedIndex === null) {
+    alert("Please select a scenario");
+    return;
+  }
+
+  const selectedCard = cards[selectedIndex];
+
+  if (selectedCard.title === "Register First") {
+    navigate("/register-first");
+  }
+};
   return (
     <div className="scenario-wrapper">
 
@@ -56,6 +71,7 @@ function ScenarioSelection() {
       <div className="scenario-box">
 
         <h2>Select Your Path</h2>
+
         <p className="desc">
           Every greatest venture starts with a clear direction. Choose the scenario that
           best describes your current journey to customize your fintech experience.
@@ -67,6 +83,7 @@ function ScenarioSelection() {
             <div
               key={i}
               className={`scenario-card ${selectedIndex === i ? "selected" : ""}`}
+<<<<<<< HEAD
               onClick={() => {
                 setSelectedIndex(i);
 
@@ -83,6 +100,11 @@ function ScenarioSelection() {
                 }
               }}
             >
+=======
+              onClick={() => setSelectedIndex(i)}
+            >
+
+>>>>>>> a848bfe543b4618b1d86c2717f626b66eebe7680
               {/* ICON */}
               <div className="icon-box">
                 <img
@@ -93,8 +115,15 @@ function ScenarioSelection() {
               </div>
 
               {/* TEXT */}
+<<<<<<< HEAD
               <h3>{card.title}</h3>
               <p>{card.desc}</p>
+=======
+              <div className="text">
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </div>
+>>>>>>> a848bfe543b4618b1d86c2717f626b66eebe7680
 
               {/* TICK */}
               {selectedIndex === i && (
@@ -102,6 +131,10 @@ function ScenarioSelection() {
                   <img src="/assets/tick.png" alt="tick" />
                 </div>
               )}
+<<<<<<< HEAD
+=======
+
+>>>>>>> a848bfe543b4618b1d86c2717f626b66eebe7680
             </div>
           ))}
         </div>
@@ -111,6 +144,10 @@ function ScenarioSelection() {
           <button className="back-btn" onClick={goBackToLogin}>
             Back
           </button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> a848bfe543b4618b1d86c2717f626b66eebe7680
           <button className="continue-btn" onClick={handleContinue}>
             Continue
           </button>

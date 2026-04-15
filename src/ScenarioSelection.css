@@ -10,15 +10,21 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 🔥 Kills all scrolling */
+  height: 100vh;
   background: #0b1320;
-  color: white;
-  overflow-y: auto; 
 }
 
 /* WRAPPER */
 .scenario-wrapper {
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 20px 40px;
+  box-sizing: border-box;
+  overflow: hidden; /* No page scroll */
 }
 
 /* NAVBAR */
@@ -63,11 +69,11 @@ body {
 
 /* MAIN BOX */
 .scenario-box {
-  background: #0a1a2f;
-  padding: 30px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;            /* Fills the outer wrapper */
+  overflow: hidden;        /* No scrolling allowed */
 }
-
 /* TITLE */
 .scenario-box h2 {
   margin-bottom: 10px;
@@ -81,14 +87,14 @@ body {
 .desc {
   color: #aaa;
   font-family: 'Inter', sans-serif;
-  font-size: 22px;
   font-weight: 500;
   font-style: italic;
-  margin-bottom: 30px;
-  max-width: 900px;
-
+  max-width: 800px;
+  font-size: 14px; 
+  margin-bottom: 15px;
   width: 100%;
   line-height: 1.4;
+  
 }
 
 
@@ -96,39 +102,47 @@ body {
 .scenario-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
+  grid-template-rows: repeat(3, 1fr); /* Forces 3 equal-height rows */
+  gap: 10px;               /* Tight gap to save vertical space */
+  flex: 1;                 /* Grid expands to fill the available area */
+  margin-bottom: 10px;
+  min-height: 0;           /* Allows grid to shrink to fit smaller screens */
 }
 
 /* CARD */
 .scenario-card {
   background: #13233a;
-  padding: 18px;
-  border-radius: 12px;
-  position: relative;
-  transition: 0.3s;
-
-  height: 140px;              /* 🔥 fixed height */
+  padding: 20px;            /* Increased padding inside the card */
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;  /* Keeps content centered vertically */
+  align-items: flex-start;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  /* 🔥 This gap controls space between Icon Box, Title, and Paragraph */
+  gap: 12px;                
+}
+.scenario-box h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .scenario-card h3 {
- font-family: 'Inter', sans-serif;
-  font-size: 22px;
+  margin: 0;
+  font-size: 16px;         /* Smaller heading */
   font-weight: 700;
   font-style: italic;
-  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #fff;
 }
 
 .scenario-card p {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  font-style: normal;
+  margin: 4px 0 0 0;
+  font-size: 13px;         /* Smaller description */
   color: #aaa;
-  cursor: pointer;
+  line-height: 1.4;
 }
 
 /* HOVER */
@@ -153,11 +167,10 @@ body {
 
 /* BUTTONS */
 .scenario-actions {
-    display: flex;
+  display: flex;
   justify-content: flex-end;
-  margin-top: 30px;
-  margin-bottom: 30px; 
   margin-top: auto; 
+  padding: 10px 0;
 }
 
 .back-btn {
@@ -217,15 +230,23 @@ body {
   width: 40px;
   height: 40px;
 }
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.icon-box img {
-  width: 28px;
+  width: 28px;        /* slightly smaller */
   height: 28px;
+
+  background-color: #1c2e4a;
+  border-radius: 6px;
+
+  margin-bottom: 4px;   /* 🔥 reduce from 8px → 4px */
+}
+
+.icon-box img {
+  width: 18px;             /* Small, sharp icon */
+  height: 18px;
   object-fit: contain;
 }
 
@@ -239,8 +260,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-
 
 
 

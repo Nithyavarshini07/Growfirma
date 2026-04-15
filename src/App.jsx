@@ -20,6 +20,7 @@ function App() {
       <Route path="/reset" element={<ResetPassword />} />
       <Route path="/scenario" element={<ScenarioSelection />} />
       <Route path="/register-first" element={<RegisterFirst />} />
+      
     </Routes>
   );
 }
