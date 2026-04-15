@@ -1,8 +1,8 @@
-import "./MVPFirst.css";
+import "./RegisterFirst.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function MVPFirst() {
+function RevenueFirst() {
   const navigate = useNavigate();
   const [showNext, setShowNext] = useState(true);
 
@@ -12,11 +12,7 @@ function MVPFirst() {
         (window.scrollY + window.innerHeight) /
         document.body.scrollHeight;
 
-      if (scrolled > 0.8) {
-        setShowNext(true);
-      } else {
-        setShowNext(false);
-      }
+      setShowNext(scrolled > 0.8);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -40,10 +36,10 @@ function MVPFirst() {
   return (
     <div className="rf-container">
 
-      {/* LEFT ICON SIDEBAR */}
+      {/* SIDEBAR */}
       <div className="side-icons">
         {icons.map((icon, index) => {
-          const isActive = index === 4; // MVP active
+          const isActive = index === 6; // revenue icon
           return (
             <img
               key={index}
@@ -58,7 +54,7 @@ function MVPFirst() {
       {/* NAV */}
       <div className="rf-nav">
         <div className="logo">
-          <img src="/assets/logo.png" alt="logo" />
+          <img src="/assets/logo.png" />
         </div>
 
         <div className="steps">
@@ -70,81 +66,83 @@ function MVPFirst() {
         </div>
       </div>
 
+      {/* MAIN */}
       <div className="rf-main">
 
         {/* LEFT */}
         <div className="rf-left">
-          <h2>MVP First</h2>
+          <h2>Revenue First</h2>
           <p className="desc">
-            Drive growth by letting the product deliver value and attract users.
-            Continuously improve through fast iterations and user feedback cycles.
+            Focus on generating consistent profits while maintaining financial discipline.
+            Scale responsibly with strategies that ensure long-term, sustainable growth.
           </p>
 
           <div className="timeline">
 
-            {/* GREEN BOX */}
+            {/* GREEN CARD */}
             <div className="rf-card highlight">
               <div className="inner-box">
-                <img src="/assets/idea.png" className="card-icon" />
+                <img src="/assets/tax.png" className="card-icon" />
 
-                <h3>Idea Validation</h3>
+                <h3>Tax</h3>
                 <ul className="card-list">
-                  <li>assumptions are tested</li>
-                  <li>you are building something users actually want</li>
+                  <li>invoice properly</li>
+                  <li>operate legally</li>
+                  <li>reduce personal liability</li>
                 </ul>
 
-                <h3 className="sub-heading">MVP Development</h3>
+                <h3 className="sub-heading">Company Registration</h3>
                 <ul className="card-list">
-                  <li>builds your first usable product</li>
-                  <li>core features only</li>
-                  <li>focus on learning and iteration</li>
+                  <li>correct accounting</li>
+                  <li>VAT handling</li>
+                  <li>ongoing compliance</li>
                 </ul>
-
-                <span className="tag high">Importance High</span>
               </div>
+
+              <span className="tag high">High</span>
             </div>
 
-            {/* BLUE BOX */}
+            {/* BLUE CARD */}
             <div className="rf-card">
               <div className="inner-box blue-box">
-                <img src="/assets/company.png" className="card-icon" />
+                <img src="/assets/law.png" className="card-icon" />
 
-                <h3>Company Registration</h3>
-                <ul className="card-sublist blue-bullets">
-                  <li>charge users</li>
-                  <li>work with contractors</li>
-                  <li>require a legal entity</li>
-                </ul>
-
-                <h3 className="sub-heading">Law</h3>
-                <ul className="card-sublist blue-bullets">
-                  <li>founder agreements</li>
-                  <li>development and partner contracts</li>
+                <h3>Law</h3>
+                <ul className="card-sublist">
+                  <li>client and partner contracts</li>
+                  <li>risk management</li>
                 </ul>
 
                 <h3 className="sub-heading">HR/Talent</h3>
-                <ul className="card-sublist blue-bullets">
-                  <li>early hiring</li>
-                  <li>contractor or freelancer setup</li>
+                <ul className="card-sublist">
+                  <li>team growth</li>
+                  <li>contractor management</li>
                 </ul>
 
-                <span className="tag mid">Importance Moderate</span>
+                <h3 className="sub-heading">Social Media Marketing</h3>
+                <ul className="card-sublist">
+                  <li>attract customers</li>
+                  <li>support revenue growth</li>
+                </ul>
               </div>
+
+              <span className="tag mid">Moderate</span>
             </div>
 
-            {/* ORANGE BOX */}
+            {/* ORANGE CARD */}
             <div className="rf-card optional">
               <div className="inner-box">
                 <img src="/assets/service.png" className="card-icon" />
 
                 <h3>Optional Services</h3>
-                <ul className="card-sublist orange-bullets">
-                  <li>Tax – once revenue starts</li>
-                  <li>Events – after launch</li>
+                <ul className="card-sublist">
+                  <li>Idea Validation – usually not relevant</li>
+                  <li>MVP Development – only if needed</li>
+                  <li>Events – networking & partnerships</li>
                 </ul>
-
-                <span className="tag low">Importance Least</span>
               </div>
+
+              <span className="tag low">Least</span>
             </div>
 
           </div>
@@ -168,11 +166,13 @@ function MVPFirst() {
               <img src="/assets/what.png" className="box-icon" />
               <h4>What is this?</h4>
             </div>
+
             <p>
-              This scenario focuses on turning an idea into a working product and
-              getting it in front of users quickly.
+              This scenario focuses on generating revenue quickly and operating safely.
             </p>
-            <p>Execution is the priority.</p>
+            <p>
+              Whether you are already earning or about to start, the priority is stability.
+            </p>
           </div>
 
           <div className="info-box">
@@ -180,12 +180,15 @@ function MVPFirst() {
               <img src="/assets/whatfor.png" className="box-icon" />
               <h4>Who is this for?</h4>
             </div>
+
             <ul className="tick-list">
-              <li>Founders ready to build</li>
-              <li>Teams preparing for launch</li>
-              <li>Startups with clear product direction</li>
+              <li>Freelancers transitioning into companies</li>
+              <li>Bootstrapped founders</li>
+              <li>Businesses focused on cash flow</li>
             </ul>
           </div>
+
+          <img src="/assets/blank.png" className="info-img" />
 
           {showNext && (
             <div className="next-floating">
@@ -202,4 +205,4 @@ function MVPFirst() {
   );
 }
 
-export default MVPFirst;
+export default RevenueFirst;

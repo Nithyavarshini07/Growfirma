@@ -43,6 +43,14 @@ function ScenarioSelection() {
     if (selectedCard.title === "Register First") {
       navigate("/register-first");
     }
+
+    if (selectedCard.title === "Exit -Oriented") {
+      navigate("/exit-oriented");
+    }
+
+    if (selectedCard.title === "Revenue First") {
+      navigate("/revenue-first");
+    }
   };
 
   return (

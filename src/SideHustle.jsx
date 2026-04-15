@@ -1,19 +1,52 @@
 import "./SideHustle.css";
+import { useNavigate } from "react-router-dom";
 
 function SideHustle() {
+  const navigate = useNavigate();
+
+  const icons = [
+    "/assets/fund.png",
+    "/assets/register.png",
+    "/assets/community.png",
+    "/assets/side.png",
+    "/assets/mvp.png",
+    "/assets/exit.png",
+    "/assets/revenue.png",
+    "/assets/corporate.png",
+    "/assets/grant.png",
+    "/assets/accelerator.png",
+    "/assets/others.png",
+  ];
+
   return (
     <div className="rf-container">
+
+      {/* LEFT ICON SIDEBAR */}
+      <div className="side-icons">
+        {icons.map((icon, index) => {
+          const isActive = index === 3; // Side Hustle active
+          return (
+            <img
+              key={index}
+              src={icon}
+              alt=""
+              className={isActive ? "active-icon" : ""}
+            />
+          );
+        })}
+      </div>
 
       {/* NAV */}
       <div className="rf-nav">
         <div className="logo">
-          <span className="grow">Grow</span>
-          <span className="firma">Firma</span>
+          <img src="/assets/logo.png" alt="logo" />
         </div>
 
         <div className="steps">
-          <span className="active">Scenario Selection</span>
-          <span>Company Profile</span>
+          <span onClick={() => navigate("/scenario")} className="clickable">
+            Scenario Selection
+          </span>
+          <span className="active">Company Profile</span>
           <span>Goals & Needs</span>
         </div>
       </div>
@@ -35,9 +68,9 @@ function SideHustle() {
             {/* CARD 1 */}
             <div className="rf-card highlight">
               <div className="inner-box">
+                <img src="/assets/idea.png" className="card-icon" />
 
                 <h3>Idea Validation</h3>
-
                 <p className="card-desc">Helps you understand:</p>
 
                 <ul className="card-list">
@@ -49,16 +82,18 @@ function SideHustle() {
                 <p className="card-note">
                   This prevents wasted time and money.
                 </p>
-
-                <span className="tag high">Importance: High</span>
               </div>
+
+              <span className="tag high">High</span>
             </div>
 
             {/* CARD 2 */}
             <div className="rf-card">
               <div className="inner-box blue-box">
+                <img src="/assets/mvp.png" className="card-icon" />
 
                 <h3>MVP Development (lean)</h3>
+
                 <p className="card-desc">
                   Prepares your company for financial activity by:
                 </p>
@@ -86,14 +121,15 @@ function SideHustle() {
                   <li>test messaging</li>
                   <li>build early visibility or personal branding</li>
                 </ul>
-
-                <span className="tag mid">Importance: Moderate</span>
               </div>
+
+              <span className="tag mid">Moderate</span>
             </div>
 
             {/* CARD 3 */}
             <div className="rf-card optional">
               <div className="inner-box">
+                <img src="/assets/service.png" className="card-icon" />
 
                 <h3>Optional Services</h3>
 
@@ -103,9 +139,9 @@ function SideHustle() {
                   <li>Law – usually unnecessary early</li>
                   <li>Tax – not needed without revenue</li>
                 </ul>
-
-                <span className="tag low">Importance: Least</span>
               </div>
+
+              <span className="tag low">Least</span>
             </div>
 
           </div>
@@ -114,9 +150,8 @@ function SideHustle() {
         {/* RIGHT */}
         <div className="rf-right">
 
-          {/* SUCCESS */}
           <div className="success-box">
-            <h4 className="sp-title">SUCCESS PREDICTION</h4>
+            <h4 className="sp-title"><i><u>SUCCESS PREDICTION</u></i></h4>
 
             <div className="progress-circle">
               <span>89%</span>
@@ -127,9 +162,12 @@ function SideHustle() {
             </p>
           </div>
 
-          {/* WHAT IS THIS */}
           <div className="info-box">
-            <h4>What is this?</h4>
+            <div className="info-title">
+              <img src="/assets/what.png" className="box-icon" />
+              <h4>What is this?</h4>
+            </div>
+
             <p>
               This scenario is about testing an idea with minimal risk and commitment.
             </p>
@@ -138,9 +176,11 @@ function SideHustle() {
             </p>
           </div>
 
-          {/* WHO IS THIS FOR */}
           <div className="info-box">
-            <h4>Who is this for?</h4>
+            <div className="info-title">
+              <img src="/assets/whatfor.png" className="box-icon" />
+              <h4>Who is this for?</h4>
+            </div>
 
             <ul className="tick-list">
               <li>Part-time founders</li>
@@ -149,10 +189,11 @@ function SideHustle() {
             </ul>
           </div>
 
-          {/* BUTTON */}
-          <div className="next-container">
+          {/* FLOAT BUTTON */}
+          <div className="next-floating">
             <button className="next-btn">
-              Next ⚡
+              Next
+              <img src="/assets/next.png" className="next-icon" />
             </button>
           </div>
 
