@@ -83,7 +83,7 @@ useEffect(() => {
 
         {/* LEFT SIDE */}
         <div className="rf-left">
-          <h2>Register First</h2>
+          <h2><i>Register First</i></h2>
           <p className="desc">
             Focus on creating your account with essential details.
             Set up your profile to get started quickly and securely.

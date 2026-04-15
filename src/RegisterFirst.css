@@ -17,38 +17,39 @@ html, body {
 
 .rf-container {
   padding: 30px;
+  padding-left: 110px;
   min-height: 100vh;
-  overflow: visible;
-  padding-bottom: 100px; /* 🔥 bottom space */
+  
+  /* 🔥 ADD THIS: This creates the empty space for the long line to sit in */
+  padding-bottom: 400px; 
+  
+  /* Ensure nothing clips the line */
+  overflow: visible; 
 }
-
 /* NAV */
 .rf-nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  align-items: center;
 
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #08121f;
-  padding: 10px 0;
+  width: 100%;
+  padding: 10px 40px;   /* SAME LEFT/RIGHT SPACE */
+  box-sizing: border-box;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: auto;
+
+  flex-shrink: 0;   /* 🔥 prevents resizing/moving */
 }
 
 .logo img {
   height: 40px;
   width: auto;
-  object-fit: contain;
+  display: block;   /* 🔥 removes tiny baseline shift */
 }
-
 .grow {
   color: #8cff00;
 }
@@ -82,70 +83,72 @@ html, body {
 
 .rf-left {
   flex: 2;
+  position: relative;
+}
+/* Move the line to the parent so it can reach the top H2 */
+.rf-left::before {
+  content: "";
+  position: absolute;
+  left: 40px; 
+  top: 10px; /* Aligned with your H2 */
+  width: 3px;
+  
+  /* 🔥 INCREASE THIS: From 150px to 300px or more to ensure it fills the bottom space */
+  height: calc(100% + 300px); 
+  
+  background: linear-gradient(to bottom, #8cff00, #4a6cff, #f9a825);
+  z-index: 1;
 }
 
+
+/* Remove the old line from .timeline so they don't double up */
+.timeline::before {
+  display: none;
+}
 .rf-right {
   flex: 1;
 }
-
+.rf-left h2,
+.rf-left .desc {
+  padding-left: 60px;   /* ✅ EXACT match with timeline */
+}
 /* TIMELINE */
 .timeline {
   position: relative;
-  padding-left: 60px;
-  .timeline {
-  padding-bottom: 80px;
+ 
+  padding-left: 80px; 
+  display: flex;
+  flex-direction: column;
 }
-}
+
 
 .timeline::before {
   content: "";
-  position: absolute;
-  left: 30px;
-  top: 0;
-  height: calc(100% + 120px);  /* 🔥 FORCE LINE TO EXTEND */
 
+  left: 40px; 
+  
+  /* 🔥 THE FIX: Move top to 0 so it starts level with your H2 title */
+  top: 0; 
+  
   width: 3px;
-
-  background: linear-gradient(
-    to bottom,
-    #8cff00,
-    #4a6cff,
-    #8cff00,
-    #4a6cff,
-    orange
-  );
-
-  border-radius: 10px;
+  /* Keep the extra length at the bottom */
+  height: calc(100% + 150px); 
+  
+  background: linear-gradient(to bottom, #8cff00, #4a6cff, #f9a825);
+  z-index: 1;
 }
-
 /* CARD */
 .rf-card {
   position: relative;
   margin-bottom: 50px;
 }
 
-/* SINGLE DOT SYSTEM (FIXED) */
-.rf-card::before {
-  content: "";
-  position: absolute;
-
-  left: 30px;   /* SAME as timeline */
-  top: 25px;
-
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-
-  background: white;
-
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
 /* REMOVE DOUBLE BORDER BUG */
 .rf-card.optional {
   border: none;
+  position: relative;   /* 🔥 MUST */
 }
+
 
 /* TAGS */
 .tag {
@@ -177,6 +180,7 @@ html, body {
   padding: 20px;
   margin-top: 10px;
   border: 1px solid #1f2f45;
+  overflow: visible !important;
 
   position: relative;   /* 🔥 important */
 }
@@ -269,7 +273,7 @@ html, body {
 }
 /* TITLE */
 .rf-left h2 {
-  font-size: 28px;        /* 🔥 bigger */
+  font-size: 28px;        
   font-weight: 700;
   color: #8cff00;
 
@@ -284,17 +288,75 @@ html, body {
   margin-bottom: 35px;
 }
 /* 🔥 REMOVE ALL TIMELINE DOTS */
+/* THE DOTS ON THE LINE */
+/* THE DOTS ON THE LINE */
+/* THE DOTS ON THE LINE */
 .rf-card::before {
-  display: none !important;
+  content: "";
+  position: absolute;
+  left: -46px; 
+  top: 28px; 
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 10;
+
+  /* Base color of the dot */
+  background: #fff; 
+
+  /* 🔥 THE GLOW: Layered shadows for a neon effect */
+  /* Shadow 1: Inner glow | Shadow 2: Close glow | Shadow 3: Large soft blur */
+  box-shadow: 
+    0 0 5px #fff,
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(140, 255, 0, 0.6); 
+
+  animation: pulseGlow 2s infinite ease-in-out;
 }
+
+/* GREEN DOT (Company Registration) */
+.rf-card.highlight::before {
+  background: #8cff00;
+  box-shadow: 0 0 15px #8cff00, 0 0 30px rgba(140, 255, 0, 0.4);
+}
+
+/* BLUE DOT (Tax/Law/HR) */
+.rf-card:nth-child(2)::before {
+  background: #4a6cff;
+  box-shadow: 0 0 15px #4a6cff, 0 0 30px rgba(74, 108, 255, 0.4);
+}
+
+/* ORANGE DOT (Optional Services) */
+.rf-card.optional::before {
+  background: #f9a825;
+  box-shadow: 0 0 15px #f9a825, 0 0 30px rgba(249, 168, 37, 0.4);
+}
+
+
 .rf-card:last-child {
   margin-bottom: 120px;   /* 🔥 BIG SPACE BELOW ORANGE BOX */
 }
-.timeline {
-  padding-bottom: 80px;
-}
+
+
 .rf-card.optional {
   margin-bottom: 120px !important;  /* 🔥 FORCE SPACE */
+}
+/* GREEN */
+.rf-card.highlight::before {
+  background: #8cff00;
+  box-shadow: 0 0 10px #8cff00;
+}
+
+/* BLUE */
+.rf-card:nth-child(2)::before {
+  background: #4a6cff;
+  box-shadow: 0 0 10px #4a6cff;
+}
+
+/* ORANGE */
+.rf-card.optional::before {
+  background: orange;
+  box-shadow: 0 0 10px orange;
 }
 /* 🔵 BLUE BOX */
 .blue-box {
@@ -370,7 +432,7 @@ html, body {
 }
 
 .rf-container {
-  padding-left: 80px; /* 🔥 pushes content right */
+  padding-left: 110px;
 }
 
 /* HOVER EFFECT */
@@ -493,32 +555,33 @@ html, body {
   top: 50%;
   transform: translateY(-50%);
 
-  height: 60vh;                 /* 🔥 slightly taller */
-  width: 70px;
+  height: 75vh;   /* 🔥 increased from 60vh */
+  width: 65px;
 
-  background: linear-gradient(
-    180deg,
-    #0f1f35,
-    #0a1628
-  );
-
-  padding: 25px 10px;
-  border-radius: 40px;
+  background: linear-gradient(180deg, #0f1f35, #0a1628);
+  border-radius: 35px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 18px;
 
-  box-shadow:
-    0 0 30px rgba(0,0,0,0.7),
-    inset 0 0 10px rgba(255,255,255,0.05);
+  justify-content: space-around;
+
+  justify-content: space-evenly;  /* keep spacing equal */
+
+  padding: 25px 0;  /* 🔥 more breathing space */
+
+    box-shadow:
+  0 0 15px rgba(74, 108, 255, 0.15),
+  inset 0 0 6px rgba(74, 108, 255, 0.12),
+  0 0 12px rgba(74, 108, 255, 0.12);
 }
 .side-icons img {
   width: 30px;
   height: 30px;
 
-  opacity: 0.8;
+  opacity: 0.9;
   cursor: pointer;
 
   transition: all 0.3s ease;
