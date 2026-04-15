@@ -15,6 +15,30 @@ html, body {
   overflow-y: auto !important;
 }
 
+.title-with-icon {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  padding: 6px 0;     /* 🔥 breathing space */
+
+  width: 100%;
+}
+
+
+.box-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.title-with-icon h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
 .rf-container {
   padding: 30px;
   padding-left: 110px;
@@ -86,17 +110,25 @@ html, body {
   position: relative;
 }
 /* Move the line to the parent so it can reach the top H2 */
+/* THE VERTICAL LINE */
 .rf-left::before {
   content: "";
   position: absolute;
   left: 40px; 
-  top: 10px; /* Aligned with your H2 */
+  top: 10px; /* Aligned with your Register First title */
   width: 3px;
   
-  /* 🔥 INCREASE THIS: From 150px to 300px or more to ensure it fills the bottom space */
-  height: calc(100% + 300px); 
+  /* 🔥 INCREASE THIS: From 150px/300px to 600px or more */
+  /* This forces the line to draw far below the last card */
+  height: calc(100% + 600px); 
   
-  background: linear-gradient(to bottom, #8cff00, #4a6cff, #f9a825);
+  /* Ensure the gradient stays solid at the end */
+  background: linear-gradient(to bottom, 
+    #8cff00 0%, 
+    #4a6cff 35%, 
+    #f9a825 70%, 
+    #f9a825 100% 
+  );
   z-index: 1;
 }
 
@@ -177,12 +209,17 @@ html, body {
 .inner-box {
   background: #0a1a2f;
   border-radius: 15px;
-  padding: 20px;
-  margin-top: 10px;
-  border: 1px solid #1f2f45;
-  overflow: visible !important;
 
-  position: relative;   /* 🔥 important */
+  padding: 22px 20px;   /* 🔥 GOOD INNER SPACE */
+  margin-top: 12px;
+
+  border: 1px solid #1f2f45;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;            /* 🔥 SPACE BETWEEN ELEMENTS */
+
+  position: relative;
 }
 
 /* GREEN GLOW */

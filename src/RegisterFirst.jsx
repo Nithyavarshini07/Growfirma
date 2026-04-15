@@ -120,7 +120,11 @@ useEffect(() => {
               <div className="inner-box blue-box">
                 <img src="/assets/tax.png" className="card-icon" />
 
+<div className="title-with-icon">
+  <img src="/assets/tax1.png" alt="Tax" className="box-icon" />
+  
                 <h3>Tax (Tax & VAT registration)</h3>
+</div>
                 <p className="card-desc">
                   Prepares your company for financial activity by:
                 </p>
@@ -134,7 +138,11 @@ useEffect(() => {
                   Useful if you plan to start operating soon.
                 </p>
 
-                <h3 className="sub-heading">Law</h3>
+<div className="title-with-icon">
+  <img src="/assets/law1.png" alt="Legal" className="box-icon" />
+ <h3 className="sub-heading">Law</h3>
+</div>
+                
                 <p className="card-desc">
                   Covers basic business legal needs such as:
                 </p>
@@ -149,7 +157,11 @@ useEffect(() => {
                   Especially important when more than one person is involved.
                 </p>
 
+<div className="title-with-icon">
+  <img src="/assets/hr1.png" alt="HR" className="box-icon" />
+  
                 <h3 className="sub-heading">HR/Talent</h3>
+</div>
                 <p className="card-desc">
                   Helps define:
                 </p>
@@ -164,6 +176,7 @@ useEffect(() => {
                 </p>
 
               </div>
+              <span className="tag mid">Moderate</span>
             </div>
 
             {/* CARD 3 */}

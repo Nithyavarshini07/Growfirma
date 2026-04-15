@@ -84,14 +84,20 @@ function RevenueFirst() {
               <div className="inner-box">
                 <img src="/assets/tax.png" className="card-icon" />
 
-                <h3>Tax</h3>
+                <div className="title-with-icon">
+  <img src="/assets/tax2.png" className="box-icon" alt="Tax" />
+  <h3>Tax</h3>
+</div>
                 <ul className="card-list">
                   <li>invoice properly</li>
                   <li>operate legally</li>
                   <li>reduce personal liability</li>
                 </ul>
 
-                <h3 className="sub-heading">Company Registration</h3>
+                <div className="title-with-icon">
+  <img src="/assets/company2.png" className="box-icon" alt="Company" />
+  <h3 className="sub-heading">Company Registration</h3>
+</div>
                 <ul className="card-list">
                   <li>correct accounting</li>
                   <li>VAT handling</li>
@@ -107,19 +113,28 @@ function RevenueFirst() {
               <div className="inner-box blue-box">
                 <img src="/assets/law.png" className="card-icon" />
 
-                <h3>Law</h3>
+                <div className="title-with-icon">
+  <img src="/assets/law1.png" className="box-icon" alt="Law" />
+  <h3>Law</h3>
+</div>
                 <ul className="card-sublist">
                   <li>client and partner contracts</li>
                   <li>risk management</li>
                 </ul>
 
-                <h3 className="sub-heading">HR/Talent</h3>
+                <div className="title-with-icon">
+  <img src="/assets/hr1.png" className="box-icon" alt="HR" />
+  <h3 className="sub-heading">HR / Talent</h3>
+</div>
                 <ul className="card-sublist">
                   <li>team growth</li>
                   <li>contractor management</li>
                 </ul>
 
-                <h3 className="sub-heading">Social Media Marketing</h3>
+                <div className="title-with-icon">
+  <img src="/assets/social1.png" className="box-icon" alt="Social Media" />
+  <h3 className="sub-heading">Social Media Marketing</h3>
+</div>
                 <ul className="card-sublist">
                   <li>attract customers</li>
                   <li>support revenue growth</li>

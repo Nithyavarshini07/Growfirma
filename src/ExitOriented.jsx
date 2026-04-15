@@ -84,21 +84,30 @@ function ExitOriented() {
               <div className="inner-box">
                 <img src="/assets/law.png" className="card-icon" />
 
-                <h3>Law</h3>
+               <div className="title-with-icon">
+  <img src="/assets/law2.png" className="box-icon" alt="Law" />
+  <h3>Law</h3>
+</div>
                 <ul className="card-list">
                   <li>clean company structure</li>
                   <li>clear ownership and responsibilities</li>
                   <li>contracts and compliance buyers expect</li>
                 </ul>
 
-                <h3 className="sub-heading">Tax</h3>
+                <div className="title-with-icon">
+  <img src="/assets/tax2.png" className="box-icon" alt="Tax" />
+  <h3 className="sub-heading">Tax</h3>
+</div>
                 <ul className="card-list">
                   <li>compliant accounting</li>
                   <li>transparent financial records</li>
                   <li>long-term tax structure</li>
                 </ul>
 
-                <h3 className="sub-heading">Company Registration</h3>
+                <div className="title-with-icon">
+  <img src="/assets/company2.png" className="box-icon" alt="Company" />
+  <h3 className="sub-heading">Company Registration</h3>
+</div>
                 <ul className="card-list">
                   <li>own assets</li>
                   <li>enter contracts</li>
@@ -114,24 +123,36 @@ function ExitOriented() {
               <div className="inner-box blue-box">
                 <img src="/assets/mvp.png" className="card-icon" />
 
-                <h3>MVP Development</h3>
+                <div className="title-with-icon">
+  <img src="/assets/mvp1.png" className="box-icon" alt="MVP" />
+  <h3>MVP Development</h3>
+</div>
                 <ul className="card-sublist">
                   <li>product or tech impacts valuation</li>
                 </ul>
 
-                <h3 className="sub-heading">HR/Talent</h3>
+                <div className="title-with-icon">
+  <img src="/assets/hr1.png" className="box-icon" alt="HR" />
+  <h3 className="sub-heading">HR / Talent</h3>
+</div>
                 <ul className="card-sublist">
                   <li>build strong team</li>
                   <li>key roles increase company value</li>
                 </ul>
 
-                <h3 className="sub-heading">Social Media Marketing</h3>
+                <div className="title-with-icon">
+  <img src="/assets/social1.png" className="box-icon" alt="Social Media" />
+  <h3 className="sub-heading">Social Media Marketing</h3>
+</div>
                 <ul className="card-sublist">
                   <li>positioning & credibility</li>
                   <li>brand presence</li>
                 </ul>
 
-                <h3 className="sub-heading">Events</h3>
+                <div className="title-with-icon">
+  <img src="/assets/event1.png" alt="Events" className="box-icon" />
+  <h3 className="sub-heading">Events</h3>
+</div>
                 <ul className="card-sublist">
                   <li>corporate networking</li>
                   <li>strategic partnerships</li>

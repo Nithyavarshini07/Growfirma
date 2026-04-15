@@ -92,7 +92,10 @@ function SideHustle() {
               <div className="inner-box blue-box">
                 <img src="/assets/mvp.png" className="card-icon" />
 
-                <h3>MVP Development (lean)</h3>
+                <div className="title-with-icon">
+  <img src="/assets/mvp1.png" alt="MVP" className="box-icon" />
+  <h3>MVP Development (lean)</h3>
+</div>
 
                 <p className="card-desc">
                   Prepares your company for financial activity by:
@@ -107,14 +110,20 @@ function SideHustle() {
                   Useful if you plan to start operating soon.
                 </p>
 
-                <h3 className="sub-heading">Events</h3>
+                <div className="title-with-icon">
+  <img src="/assets/event1.png" alt="Events" className="box-icon" />
+  <h3 className="sub-heading">Events</h3>
+</div>
                 <ul className="card-sublist">
                   <li>learning opportunities</li>
                   <li>startup communities</li>
                   <li>early feedback and inspiration</li>
                 </ul>
 
-                <h3 className="sub-heading">Social Media Marketing</h3>
+                <div className="title-with-icon">
+  <img src="/assets/social1.png" alt="Social Media" className="box-icon" />
+  <h3 className="sub-heading">Social Media Marketing</h3>
+</div>
                 <p className="card-desc">Used experimentally to:</p>
 
                 <ul className="card-sublist">

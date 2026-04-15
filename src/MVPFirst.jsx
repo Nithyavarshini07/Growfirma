@@ -87,13 +87,19 @@ function MVPFirst() {
               <div className="inner-box">
                 <img src="/assets/idea.png" className="card-icon" />
 
-                <h3>Idea Validation</h3>
+               <div className="title-with-icon">
+  <img src="/assets/idea2.png" alt="Idea Validation" className="box-icon" />
+  <h3>Idea Validation</h3>
+</div>
                 <ul className="card-list">
                   <li>assumptions are tested</li>
                   <li>you are building something users actually want</li>
                 </ul>
 
-                <h3 className="sub-heading">MVP Development</h3>
+                <div className="title-with-icon">
+  <img src="/assets/mvp2.png" alt="MVP Development" className="box-icon" />
+  <h3>MVP Development</h3>
+</div>
                 <ul className="card-list">
                   <li>builds your first usable product</li>
                   <li>core features only</li>
@@ -109,20 +115,29 @@ function MVPFirst() {
               <div className="inner-box blue-box">
                 <img src="/assets/company.png" className="card-icon" />
 
-                <h3>Company Registration</h3>
+                <div className="title-with-icon">
+  <img src="/assets/company2.png" alt="Company Registration" className="box-icon" />
+  <h3>Company Registration</h3>
+</div>
                 <ul className="card-sublist blue-bullets">
                   <li>charge users</li>
                   <li>work with contractors</li>
                   <li>require a legal entity</li>
                 </ul>
 
-                <h3 className="sub-heading">Law</h3>
+                <div className="title-with-icon">
+  <img src="/assets/law1.png" alt="Law" className="box-icon" />
+  <h3>Law</h3>
+</div>
                 <ul className="card-sublist blue-bullets">
                   <li>founder agreements</li>
                   <li>development and partner contracts</li>
                 </ul>
 
-                <h3 className="sub-heading">HR/Talent</h3>
+                <div className="title-with-icon">
+  <img src="/assets/hr1.png" alt="HR Talent" className="box-icon" />
+  <h3>HR / Talent</h3>
+</div>
                 <ul className="card-sublist blue-bullets">
                   <li>early hiring</li>
                   <li>contractor or freelancer setup</li>
