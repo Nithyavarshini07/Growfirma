@@ -3,30 +3,35 @@ import "./styles.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const CreateAccount = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  // ✅ ALL STATES INSIDE COMPONENT
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [terms, setTerms] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
 
+  // ✅ VALIDATION FUNCTION
   const createAccount = () => {
-    const email = document.querySelector("input[type='email']").value;
-    const password = document.getElementById("password").value;
-    const terms = document.getElementById("terms").checked;
-
-    if (!email || !password) {
-      alert("Please fill all fields");
-      return;
+    if (!firstName || !email || !password) {
+      alert("Please fill First Name, Email and Password");
+      return; // ❌ STOP
     }
 
     if (!terms) {
       alert("Please accept Terms and Conditions");
-      return;
+      return; // ❌ STOP
     }
 
+    // ✅ SUCCESS
     alert("Account created successfully!");
+    navigate("/scenario");
   };
 
-  // ✅ FIXED toggle function
+  // 👁️ Toggle password
   const togglePassword = () => {
     setPasswordType(passwordType === "password" ? "text" : "password");
   };
@@ -38,17 +43,16 @@ const CreateAccount = () => {
   return (
     <div className="container">
 
-      {/* LEFT SIDE */}
+      {/* LEFT */}
       <div className="left">
         <div className="logo">
-         <img src="/assets/logo.png" alt="logo" />
+          <img src="/assets/logo.png" alt="logo" />
         </div>
-
         <h1><i>TURNING IDEAS</i></h1>
         <h2><i>INTO REALITY</i></h2>
       </div>
 
-      {/* RIGHT SIDE */}
+      {/* RIGHT */}
       <div className="right">
         <div className="form-box">
 
@@ -61,54 +65,73 @@ const CreateAccount = () => {
             </button>
 
             <button onClick={() => socialLogin("linkedin")}>
-             <img src="/assets/linkedin.png" alt="linkedin" />
+              <img src="/assets/linkedin.png" alt="linkedin" />
               LinkedIn
             </button>
           </div>
 
-
           <p className="or">OR</p>
 
           <div className="row">
-            <input type="text" placeholder="Firstname" />
-            <input type="text" placeholder="Lastname" />
+            <input
+              type="text"
+              placeholder="Firstname"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+
+            <input
+              type="text"
+              placeholder="Lastname"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </div>
 
-          <input type="email" placeholder="Email address" />
+          <input
+            type="email"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
           <div className="password-field">
             <input
               type={passwordType}
-              id="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
 
-            {/* ✅ NEW ICON */}
             <span className="toggle-password" onClick={togglePassword}>
               {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
 
           <div className="checkbox">
-            <input type="checkbox" id="terms" />
-            <label htmlFor="terms">
+            <input
+              type="checkbox"
+              checked={terms}
+              onChange={(e) => setTerms(e.target.checked)}
+            />
+            <label>
               I agree to the <span>Terms and Conditions</span>
             </label>
           </div>
 
           <div className="checkbox">
-            <input type="checkbox" id="consent" />
-            <label htmlFor="consent">I consent for data sharing</label>
+            <input type="checkbox" />
+            <label>I consent for data sharing</label>
           </div>
 
-          <button className="create-btn" onClick={() => navigate("/scenario")}>
+          <button className="create-btn" onClick={createAccount}>
             CREATE ACCOUNT
-           </button>
+          </button>
 
           <p className="login">
             Already have an account?
             <Link to="/login" className="login-link">
-             Log in
+              Log in
             </Link>
           </p>
 
