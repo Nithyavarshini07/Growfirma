@@ -202,6 +202,8 @@ function MVPFirst() {
             </ul>
           </div>
 
+          <img src="/assets/blank.png" alt="info" className="info-img" />
+
           {showNext && (
             <div className="next-floating">
               <button className="next-btn">

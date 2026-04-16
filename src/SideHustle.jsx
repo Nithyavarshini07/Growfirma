@@ -198,6 +198,8 @@ function SideHustle() {
             </ul>
           </div>
 
+          <img src="/assets/blank.png" alt="info" className="info-img" />
+
           {/* FLOAT BUTTON */}
           <div className="next-floating">
             <button className="next-btn">

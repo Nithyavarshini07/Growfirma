@@ -110,75 +110,88 @@ useEffect(() => {
                 <p className="card-note">
                   This is the foundation of everything else.
                 </p>
+                <div className="importance-pod high">
+  <span className="label">Importance</span>
+  <span className="value high">High</span>
+</div>
               </div>
 
-              <span className="tag high">High</span>
             </div>
 
-            {/* CARD 2 */}
-            <div className="rf-card">
-              <div className="inner-box blue-box">
-                <img src="/assets/tax.png" className="card-icon" />
+{/* CARD 2 - Tax, Law, and HR */}
+<div className="rf-card">
+  <div className="inner-box blue-box multi-section-card">
+    
+    {/* Decorative Background Icon (Top Right) */}
+    <img src="/assets/tax.png" className="card-icon" alt="background-decoration" />
 
-<div className="title-with-icon">
-  <img src="/assets/tax1.png" alt="Tax" className="box-icon" />
-  
-                <h3>Tax (Tax & VAT registration)</h3>
+    <div className="card-content">
+      
+      {/* SECTION: TAX */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/tax1.png" alt="Tax" className="box-icon" />
+          <h3>Tax (Tax & VAT registration)</h3>
+        </div>
+        <p className="card-desc">
+          Prepares your company for financial activity by:
+        </p>
+        <ul className="card-sublist">
+          <li>registering for tax</li>
+          <li>handling VAT setup if required</li>
+        </ul>
+        <p className="card-note">
+          Useful if you plan to start operating soon.
+        </p>
+      </div>
+
+      {/* SECTION: LAW */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/law1.png" alt="Legal" className="box-icon" />
+          <h3 className="sub-heading">Law</h3>
+        </div>
+        <p className="card-desc">
+          Covers basic business legal needs such as:
+        </p>
+        <ul className="card-sublist">
+          <li>founder agreements</li>
+          <li>general business contracts</li>
+          <li>structural clarity</li>
+        </ul>
+        <p className="card-note">
+          Especially important when more than one person is involved.
+        </p>
+      </div>
+
+      {/* SECTION: HR / TALENT */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/hr1.png" alt="HR" className="box-icon" />
+          <h3 className="sub-heading">HR/Talent</h3>
+        </div>
+        <p className="card-desc">
+          Helps define:
+        </p>
+        <ul className="card-sublist">
+          <li>founder roles</li>
+          <li>early hires or contractors</li>
+        </ul>
+        <p className="card-note">
+          Not required if you are working alone.
+        </p>
+      </div>
+
+    </div>
+
+    {/* IMPORTANCE BOX (Bottom Left) */}
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value mid">Moderate</span>
+    </div>
+
+  </div>
 </div>
-                <p className="card-desc">
-                  Prepares your company for financial activity by:
-                </p>
-
-                <ul className="card-sublist">
-                  <li>registering for tax</li>
-                  <li>handling VAT setup if required</li>
-                </ul>
-
-                <p className="card-note">
-                  Useful if you plan to start operating soon.
-                </p>
-
-<div className="title-with-icon">
-  <img src="/assets/law1.png" alt="Legal" className="box-icon" />
- <h3 className="sub-heading">Law</h3>
-</div>
-                
-                <p className="card-desc">
-                  Covers basic business legal needs such as:
-                </p>
-
-                <ul className="card-sublist">
-                  <li>founder agreements</li>
-                  <li>general business contracts</li>
-                  <li>structural clarity</li>
-                </ul>
-
-                <p className="card-note">
-                  Especially important when more than one person is involved.
-                </p>
-
-<div className="title-with-icon">
-  <img src="/assets/hr1.png" alt="HR" className="box-icon" />
-  
-                <h3 className="sub-heading">HR/Talent</h3>
-</div>
-                <p className="card-desc">
-                  Helps define:
-                </p>
-
-                <ul className="card-sublist">
-                  <li>founder roles</li>
-                  <li>early hires or contractors</li>
-                </ul>
-
-                <p className="card-note">
-                  Not required if you are working alone.
-                </p>
-
-              </div>
-              <span className="tag mid">Moderate</span>
-            </div>
-
             {/* CARD 3 */}
             <div className="rf-card optional">
               <div className="inner-box">
@@ -191,9 +204,13 @@ useEffect(() => {
                   <li><strong>Social Media Marketing</strong> - once you are active</li>
                   <li><strong>Events</strong> - when you want ecosystem exposure</li>
                 </ul>
+                <div className="importance-pod low">
+  <span className="label">Importance</span>
+  <span className="value low">Least</span>
+</div>
               </div>
 
-              <span className="tag low">Least</span>
+              
             </div>
 
           </div>

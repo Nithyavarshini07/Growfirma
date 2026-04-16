@@ -40,6 +40,15 @@ html, body {
 /* RIGHT SIDE CONTENT */
 .right-col {
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+}
+.card-desc,
+.card-sublist,
+.card-note {
+  margin-left: 2px;
 }
 
 .card-desc,
@@ -59,9 +68,6 @@ html, body {
   font-size: 20px;
   margin: 0;
 }
-.card-content {
-  margin-left: 63px; /* aligns under text after icon */
-}
 
 .title-with-icon {
   display: flex;
@@ -71,7 +77,20 @@ html, body {
   padding: 6px 0;     /* 🔥 breathing space */
 
   width: 100%;
+  margin-top: 18px;   /* 🔥 space between sections */
 }
+
+
+/* 3. List Item Alignment */
+.card-list, .card-sublist {
+  padding-left: 20px;  /* Bullet point offset */
+  list-style-type: disc;
+}
+
+.card-list li::marker {
+  font-size: 1.2rem;   /* Makes the dots look like the "real" image */
+}
+
 
 
 .box-icon {
@@ -98,6 +117,8 @@ html, body {
   /* Ensure nothing clips the line */
   overflow: visible; 
 }
+
+
 /* NAV */
 .rf-nav {
   display: flex;
@@ -180,6 +201,58 @@ html, body {
 }
 
 
+.importance-pod {
+  width: 114px;
+  height: 57px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+
+  background: #1D253A80 !important;
+  margin-top: 20px;
+  margin-top: auto;   /* 🔥 SPACE ABOVE BOX */
+
+}
+
+.importance-pod .label {
+  color: #9CA3AF;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600; /* semi-bold */
+}
+
+
+.importance-pod .value {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  background: transparent !important;
+  padding: 0;
+  border: none;
+}
+/* ONLY TEXT COLORS INSIDE importance box */
+.importance-pod .high {
+  color: #A3FF12 !important;
+  background: none !important;
+}
+
+.importance-pod .mid {
+ 
+  background: none !important;
+  color: #00C9FF !important;
+}
+
+.importance-pod .low {
+ 
+  background: none !important;
+   color: #F97316 !important;
+}
 /* Remove the old line from .timeline so they don't double up */
 .timeline::before {
   display: none;
@@ -239,34 +312,15 @@ html, body {
   font-size: 12px;
 }
 
-.high {
-  background: #8cff00;
-  color: black;
-}
 
-.mid {
-  background: #00c2ff;
-}
-
-.low {
-  background: orange;
-}
-
-/* BOXES */
 .inner-box {
-  background: #0a1a2f;
+  position: relative;
+  background: #0a1a2f; /* Dark background from image */
   border-radius: 15px;
-
-  padding: 22px 20px;   /* 🔥 GOOD INNER SPACE */
-  margin-top: 12px;
-
-  border: 1px solid #1f2f45;
-
+  padding: 30px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;            /* 🔥 SPACE BETWEEN ELEMENTS */
-
-  position: relative;
+  gap: 20px; /* Space between Tax, Law, and HR sections */
 }
 
 /* GREEN GLOW */
@@ -285,6 +339,7 @@ html, body {
 .rf-card h3 {
   margin-bottom: 10px;
   font-size: 16px;
+   display: flex;
 }
 
 .card-desc {
@@ -389,8 +444,6 @@ html, body {
   /* Base color of the dot */
   background: #fff; 
 
-  /* 🔥 THE GLOW: Layered shadows for a neon effect */
-  /* Shadow 1: Inner glow | Shadow 2: Close glow | Shadow 3: Large soft blur */
   box-shadow: 
     0 0 5px #fff,
     0 0 10px rgba(255, 255, 255, 0.8),
@@ -436,6 +489,7 @@ html, body {
 .rf-card:nth-child(2)::before {
   background: #4a6cff;
   box-shadow: 0 0 10px #4a6cff;
+  
 }
 
 /* ORANGE */
@@ -446,7 +500,7 @@ html, body {
 /* 🔵 BLUE BOX */
 .blue-box {
   border: 2px solid #4a6cff;
-  box-shadow: 0 0 12px rgba(74,108,255,0.5);
+  box-shadow: 0 0 15px rgba(74, 108, 255, 0.3);
 }
 .info-box p {
   margin-bottom: 10px;
@@ -682,3 +736,158 @@ html, body {
           drop-shadow(0 0 10px #8cff00);
 }
 
+/* --- CARD 2 SPECIFIC STYLES --- */
+
+/* The main container */
+.multi-section-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px !important;
+  gap: 24px; /* Space between Tax, Law, and HR sections */
+  min-height: 700px; /* Optional: adjust to match your content length */
+}
+
+/* Decorative background icon in the top right corner */
+.multi-section-card .card-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 50px;
+  height: auto;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Vertical grouping for each sub-topic */
+.section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Tight space between title and its description */
+}
+
+/* Aligning the descriptions to start under the title text, not the icon */
+.multi-section-card .card-desc,
+.multi-section-card .card-note {
+  padding-left: 42px; /* icon width + gap */
+  margin: 0;
+  font-size: 16px;
+  color: #d1d5db;
+}
+
+/* Bullet list styling */
+.multi-section-card .card-sublist {
+  padding-left: 62px; /* Further indented */
+  margin: 4px 0;
+  list-style-type: disc;
+}
+
+.multi-section-card .card-sublist li {
+  font-size: 15px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+/* Blue bullets to match the border of Card 2 */
+.multi-section-card .card-sublist li::marker {
+  color: #4a6cff;
+}
+
+.multi-section-card .card-note {
+  font-style: italic;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.multi-section-card .importance-pod {
+  margin-top: auto;
+  align-self: flex-start;
+  
+  /* Matches the padding-left of .card-desc (42px) */
+  margin-left: 42px; 
+  
+  /* Reset any previous centering styles */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 12px;
+}
+
+/* Ensure the labels inside also align left */
+.multi-section-card .importance-pod .label,
+.multi-section-card .importance-pod .value {
+  text-align: left;
+  width: 100%;
+}
+
+/* --- ALIGNMENT FOR CARD 1 (Highlight) --- */
+.rf-card.highlight .inner-box {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px !important;
+  min-height: 450px; /* Adjust as needed */
+  border: 2px solid #8cff00 !important; /* Green theme */
+  box-shadow: 0 0 15px rgba(140, 255, 0, 0.3);
+}
+
+/* Indent Card 1 content to match Card 2's text column */
+.rf-card.highlight .card-desc,
+.rf-card.highlight .card-note,
+.rf-card.highlight .card-list,
+.rf-card.highlight .importance-pod {
+  margin-left: 42px; /* The "Magic Number" to align with Card 2 icons */
+}
+
+.rf-card.highlight .card-list {
+  padding-left: 20px; /* Standard bullet offset */
+}
+
+/* --- ALIGNMENT FOR CARD 3 (Optional) --- */
+.rf-card.optional .inner-box {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px !important;
+  min-height: 450px;
+  border: 2px solid #f9a825 !important; /* Orange theme */
+  box-shadow: 0 0 15px rgba(249, 168, 37, 0.3);
+}
+
+/* Indent Card 3 content to match the column */
+.rf-card.optional .card-sublist,
+.rf-card.optional .importance-pod {
+  margin-left: 42px; 
+}
+
+.rf-card.optional .card-sublist {
+  padding-left: 20px;
+}
+
+/* --- SHARED ELEMENTS --- */
+
+/* Background icons for both cards */
+.rf-card.highlight .card-icon,
+.rf-card.optional .card-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 50px;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* Force Importance Pods to the bottom left of the column */
+.rf-card.highlight .importance-pod,
+.rf-card.optional .importance-pod {
+  margin-top: auto;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  background: rgba(29, 37, 58, 0.6);
+  border-radius: 8px;
+}
+
+/* Color highlights for values */
+.value.high { color: #8cff00 !important; font-weight: bold; }
+.value.low { color: #f9a825 !important; font-weight: bold; }
