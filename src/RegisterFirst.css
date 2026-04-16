@@ -681,4 +681,38 @@ html, body {
           brightness(110%) contrast(110%)
           drop-shadow(0 0 10px #8cff00);
 }
+/* Title */
+.what-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
 
+/* Paragraphs */
+.what-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+/* Icon size */
+.what-icon {
+  width: 39px;
+  height: 39px;
+}
+/* Title */
+.who-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+/* List items */
+.who-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+/* Icon size */
+.who-icon {
+  width: 39px;
+  height: 39px;
+}

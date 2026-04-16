@@ -1,5 +1,4 @@
 import "./RegisterFirst.css";
-
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -216,33 +215,33 @@ useEffect(() => {
           </div>
 
           <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/what.png" alt="info" className="box-icon" />
-              <h4>What is this?</h4>
-            </div>
+  <div className="info-title">
+    <img src="/assets/what.png" alt="info" className="box-icon what-icon" />
+    <h4 className="what-title">What is this?</h4>
+  </div>
 
-            <p>
-              This scenario is for founders who want to legally set up their company first, before
-              building, marketing, or selling anything.
-            </p>
+  <p className="what-text">
+    This scenario is for founders who want to legally set up their company first, before
+    building, marketing, or selling anything.
+  </p>
 
-            <p>
-              You already know you want a company now you want to do it correctly
-            </p>
-          </div>
+  <p className="what-text">
+    You already know you want a company now you want to do it correctly
+  </p>
+</div>
 
           <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/whatfor.png" alt="users" className="box-icon" />
-              <h4>Who is this for?</h4>
-            </div>
+  <div className="info-title">
+    <img src="/assets/whatfor.png" alt="users" className="box-icon who-icon" />
+    <h4 className="who-title">Who is this for?</h4>
+  </div>
 
-            <ul className="tick-list">
-              <li>First-time founders</li>
-              <li>Freelancers planning to formalise their work</li>
-              <li>Founders who want a legal entity ready for future use</li>
-            </ul>
-          </div>
+  <ul className="tick-list who-list">
+    <li>First-time founders</li>
+    <li>Freelancers planning to formalise their work</li>
+    <li>Founders who want a legal entity ready for future use</li>
+  </ul>
+</div>
 
           <img src="/assets/blank.png" alt="info" className="info-img" />
 
@@ -254,6 +253,9 @@ useEffect(() => {
     </button>
   </div>
 )}
+
+
+
         </div>
 
       </div>
