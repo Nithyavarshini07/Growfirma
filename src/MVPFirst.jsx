@@ -169,38 +169,47 @@ function MVPFirst() {
         <div className="rf-right">
 
           <div className="success-box">
-            <h4 className="sp-title"><i><u>SUCCESS PREDICTION</u></i></h4>
-            <div className="progress-circle">
-              <span>89%</span>
-            </div>
-            <p className="sp-desc">
-              Based on the current market volatility and your historical portfolio performance
-            </p>
-          </div>
+  <h4 className="sp-title">
+    <i><u>SUCCESS PREDICTION</u></i>
+  </h4>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/what.png" className="box-icon" />
-              <h4>What is this?</h4>
-            </div>
-            <p>
-              This scenario focuses on turning an idea into a working product and
-              getting it in front of users quickly.
-            </p>
-            <p>Execution is the priority.</p>
-          </div>
+  <div className="progress-circle">
+    <span>89%</span>
+  </div>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/whatfor.png" className="box-icon" />
-              <h4>Who is this for?</h4>
-            </div>
-            <ul className="tick-list">
-              <li>Founders ready to build</li>
-              <li>Teams preparing for launch</li>
-              <li>Startups with clear product direction</li>
-            </ul>
-          </div>
+  <p className="sp-desc">
+    Based on the current market volatility and your historical portfolio performance
+  </p>
+</div>
+
+<div className="info-box">
+  <div className="info-title">
+    <img src="/assets/what.png" alt="info" className="box-icon what-icon" />
+    <h4 className="what-title">What is this?</h4>
+  </div>
+
+  <p className="what-text">
+    This scenario focuses on turning an idea into a working product and
+    getting it in front of users quickly.
+  </p>
+
+  <p className="what-text">
+    Execution is the priority.
+  </p>
+</div>
+
+<div className="info-box">
+  <div className="info-title">
+    <img src="/assets/whatfor.png" alt="users" className="box-icon who-icon" />
+    <h4 className="who-title">Who is this for?</h4>
+  </div>
+
+  <ul className="tick-list who-list">
+    <li>Founders ready to build</li>
+    <li>Teams preparing for launch</li>
+    <li>Startups with clear product direction</li>
+  </ul>
+</div>
 
           {showNext && (
             <div className="next-floating">

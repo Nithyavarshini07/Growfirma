@@ -167,3 +167,28 @@ body {
   bottom: 20px;
   right: 20px;
 }
+.what-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.what-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+.what-icon, .who-icon {
+  width: 39px;
+  height: 39px;
+}
+
+.who-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+.who-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}

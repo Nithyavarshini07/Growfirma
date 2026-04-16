@@ -171,32 +171,33 @@ function SideHustle() {
             </p>
           </div>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/what.png" className="box-icon" />
-              <h4>What is this?</h4>
-            </div>
+        <div className="info-box">
+  <div className="info-title">
+    <img src="/assets/what.png" alt="info" className="box-icon what-icon" />
+    <h4 className="what-title">What is this?</h4>
+  </div>
 
-            <p>
-              This scenario is about testing an idea with minimal risk and commitment.
-            </p>
-            <p>
-              You are exploring, not building a full company yet.
-            </p>
-          </div>
+  <p className="what-text">
+    This scenario is about testing an idea with minimal risk and commitment.
+  </p>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/whatfor.png" className="box-icon" />
-              <h4>Who is this for?</h4>
-            </div>
+  <p className="what-text">
+    You are exploring, not building a full company yet.
+  </p>
+</div>
 
-            <ul className="tick-list">
-              <li>Part-time founders</li>
-              <li>Students and professionals testing ideas</li>
-              <li>Solo builders who want flexibility</li>
-            </ul>
-          </div>
+<div className="info-box">
+  <div className="info-title">
+    <img src="/assets/whatfor.png" alt="users" className="box-icon who-icon" />
+    <h4 className="who-title">Who is this for?</h4>
+  </div>
+
+  <ul className="tick-list who-list">
+    <li>Part-time founders</li>
+    <li>Students and professionals testing ideas</li>
+    <li>Solo builders who want flexibility</li>
+  </ul>
+</div>
 
           {/* FLOAT BUTTON */}
           <div className="next-floating">
