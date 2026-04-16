@@ -4,25 +4,42 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 
 function Login() {
-    const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
-  // ✅ ADD THIS FUNCTION
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // 👁️ toggle password
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
 
-  // ✅ ADD THIS FUNCTION
+  // 🌐 social login
   const socialLogin = (platform) => {
     alert("Login with " + platform);
+  };
+
+  // ✅ VALIDATION FUNCTION (CORRECT PLACE)
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert("Please enter Email and Password");
+      return; // ❌ STOP
+    }
+
+    // ✅ SUCCESS
+    alert("Login successful!");
+    navigate("/scenario");
   };
 
   return (
     <div className="container">
       <div className="left">
         <div className="logo">
-                  <img src="/assets/logo.png" alt="logo" />
-                </div>
+          <img src="/assets/logo.png" alt="logo" />
+        </div>
 
         <h1><i>TURNING IDEAS</i></h1>
         <h2><i>INTO REALITY</i></h2>
@@ -39,19 +56,26 @@ function Login() {
             </button>
 
             <button onClick={() => socialLogin("linkedin")}>
-             <img src="/assets/linkedin.png" alt="linkedin" />
+              <img src="/assets/linkedin.png" alt="linkedin" />
               LinkedIn
             </button>
           </div>
 
           <p className="or">OR</p>
 
-          <input type="email" placeholder="Email address" />
+          <input
+            type="email"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
           <div className="password">
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
 
             <span onClick={togglePassword}>
@@ -60,19 +84,20 @@ function Login() {
           </div>
 
           <Link to="/forgot" className="forgot">
-           Forgot password?
+            Forgot password?
           </Link>
 
-          <button className="signin" onClick={() => navigate("/scenario")}>
+          {/* ✅ CORRECT BUTTON */}
+          <button type="button" className="signin" onClick={handleLogin}>
             Sign-in
           </button>
 
           <p className="signup">
-             Don’t have an account?{" "}
+            Don’t have an account?{" "}
             <Link to="/" className="signup-link">
-             Signup
+              Signup
             </Link>
-</p>
+          </p>
         </div>
       </div>
     </div>
