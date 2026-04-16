@@ -51,6 +51,7 @@ function ScenarioSelection() {
     if (selectedCard.title === "Revenue First") {
       navigate("/revenue-first");
     }
+    navigate("/company-profile");
   };
 
   return (
@@ -64,7 +65,9 @@ function ScenarioSelection() {
 
         <div className="steps">
           <span className="active">Scenario Selection</span>
-          <span>Company Profile</span>
+          <span onClick={() => navigate("/company-profile")}>
+  Company Profile
+</span>
           <span>Goals & Needs</span>
         </div>
       </div>

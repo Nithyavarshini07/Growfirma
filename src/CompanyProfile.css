@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
+
+:root {
+  --bg-dark: #050b16;
+  --card-bg: #111a2e;
+  --neon-green: #b2ff59;
+  --neon-blue: #4da3ff;
+  --text-gray: #a3b1cc;
+  --border-color: #1a2332;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-dark);
+  color: white;
+}
+
+.page {
+  padding: 20px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* NAVIGATION */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
+.logo-plus { color: #2dff7a; font-weight: bold; margin-right: 6px; }
+.logo-bold { color: #2d46b9; font-weight: bold; }
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex: 2;
+}
+
+.header-spacer { flex: 1; }
+
+.nav-item {
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.6;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  color: var(--neon-green);
+  opacity: 1;
+  position: relative;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--neon-green);
+}
+
+/* TOP BANNER */
+.banner-outer-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.side-doc-box {
+  background: #151e2d;
+  border: 1px solid #2d3848;
+  padding: 0 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-banner-inner {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #0a1324;
+  border: 1px solid rgba(178, 255, 89, 0.5);
+  border-radius: 20px;
+}
+
+.path-tag {
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.edit-link { color: var(--neon-blue); font-size: 12px; margin-left: 10px; cursor: pointer; }
+.banner-subtext { margin: 5px 0 0 0; font-size: 13px; color: var(--text-gray); }
+
+.banner-status-icons { display: flex; gap: 20px; font-size: 20px; }
+
+/* GRID LAYOUT */
+/* ... keep your imports and root variables ... */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 30px;
+  /* Removed 'height' - let the content define the height */
+  align-items: start; 
+}
+
+.form-card {
+  background: #111a2e;
+  padding: 40px;
+  border-radius: 20px;
+  /* CRITICAL: Use flex column to handle internal spacing */
+  display: flex;
+  flex-direction: column;
+  height: auto; 
+  min-height: min-content;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  background: #000 !important;
+  border: 1px solid #1a2332;
+  padding: 14px;
+  border-radius: 10px;
+  color: white;
+  font-family: inherit;
+  resize: vertical; /* Allow vertical resize only */
+  min-height: 120px; /* Gives it a baseline height */
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pushes footer to the bottom of the flex container */
+  padding-top: 20px; /* Space between textarea and footer */
+}
+
+/* Ensure the side columns don't force the main card to behave weirdly */
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-panel-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.form-title {
+  color: var(--neon-green);
+  font-size: 32px;
+  font-weight: 900;
+  font-style: italic;
+  margin: 0;
+}
+
+.form-description {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin: 10px 0 30px 0;
+}
+
+/* INPUT STYLES */
+.input-group { margin-bottom: 20px; width: 100%; }
+.input-group label { display: block; font-size: 14px; margin-bottom: 10px; color: white; font-weight: 600; }
+
+input, select, textarea {
+  width: 100%;
+  background: #000 !important;
+  border: 1px solid var(--border-color);
+  padding: 14px;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* TOGGLES */
+.toggle-btns { display: flex; background: #000; padding: 4px; border-radius: 10px; width: fit-content; gap: 5px; }
+.btn-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-toggle.active {
+  background: #1a2332;
+  border: 1px solid var(--neon-green);
+}
+
+/* FOOTER */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.clear-link { color: var(--text-gray); cursor: pointer; font-size: 14px; }
+
+.btn-deploy {
+  background: var(--neon-green);
+  color: black;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(178, 255, 89, 0.4);
+}
+
+/* SIDEBAR COMPONENTS */
+.status-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid #1a2332;
+  border-top-color: var(--neon-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.compliance-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+}
+.item-green { border-left: 4px solid var(--neon-green); }
+.item-red { border-left: 4px solid #ff4d4d; }
+
+.scan-btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--neon-blue);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* Sidebar Card Titles */
+.side-card-title {
+  color: #a3b1cc;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+/* Circular Progress Alignment */
+.circular-progress-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.progress-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  color: #b2ff59;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.complete-label {
+  color: #a3b1cc;
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Linear Progress Bar */
+.stage-progress-section {
+  margin-top: 20px;
+}
+
+.stage-title {
+  color: #a3b1cc;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.linear-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #1a2332; /* Darker track */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.linear-progress-bar {
+  height: 100%;
+  background: #00d2ff; /* That specific cyan/blue in the image */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.5); /* Subtle glow */
+}
+
+/* SVG specific styling to match the glow in the image */
+svg circle:nth-child(2) {
+  filter: drop-shadow(0 0 4px rgba(178, 255, 89, 0.3));
+}
+/* Header styling */
+.compliance-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.compliance-header h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.shield-icon {
+  color: #00d2ff;
+  font-size: 18px;
+}
+
+/* List container */
+.compliance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Individual Item Base */
+.compliance-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03); /* Default subtle dark bg */
+  transition: transform 0.2s ease;
+}
+
+.status-icon {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.status-text strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.status-text p {
+  margin: 0;
+  font-size: 11px;
+  color: #a3b1cc;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+/* Success State (Green) */
+.status-success {
+  background: rgba(178, 255, 89, 0.05);
+  border: 1px solid rgba(178, 255, 89, 0.1);
+}
+.status-success strong { color: #b2ff59; }
+
+/* Warning State (Red/Orange) */
+.status-warning {
+  background: rgba(255, 77, 77, 0.05);
+  border: 1px solid rgba(255, 77, 77, 0.1);
+}
+.status-warning strong { color: #ff6b6b; }
+
+/* Pending State (Gray/Blue) */
+.status-pending {
+  background: rgba(163, 177, 204, 0.05);
+  border: 1px solid rgba(163, 177, 204, 0.1);
+}
+.status-pending strong { color: #a3b1cc; }
+
+/* Diagnostic Button Refinement */
+.scan-btn {
+  width: 100%;
+  padding: 14px;
+  background: rgba(0, 210, 255, 0.05);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  color: #00d2ff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.scan-btn:hover {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: #00d2ff;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}

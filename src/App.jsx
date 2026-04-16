@@ -9,6 +9,8 @@ import RegisterFirst from "./RegisterFirst";
 import MVPFirst from "./MVPFirst";
 import ExitOriented from "./ExitOriented";
 import RevenueFirst from "./RevenueFirst";
+import CompanyProfile from "./CompanyProfile";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <Route path="/forgot" element={<ForgotPassword />} />
       <Route path="/mvp-first" element={<MVPFirst />} />
       <Route path="/exit-oriented" element={<ExitOriented />} />
+      <Route path="/company-profile" element={<CompanyProfile />} />
 
       <Route path="/side-hustle" element={<SideHustle />} />
       <Route path="/reset" element={<ResetPassword />} />
