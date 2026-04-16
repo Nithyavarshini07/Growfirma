@@ -85,7 +85,7 @@ useEffect(() => {
         <div className="rf-left">
           <h2><i>Register First</i></h2>
           <p className="desc">
-            Focus on creating your account with essential details.
+            Focus on creating your account with essential details.<br />
             Set up your profile to get started quickly and securely.
           </p>
           

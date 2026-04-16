@@ -14,6 +14,54 @@ html, body {
   height: auto !important;
   overflow-y: auto !important;
 }
+.title {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 35px;
+}
+
+.sub-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+.card-row {
+  display: grid;
+  grid-template-columns: 80px 1fr; /* icon column + content column */
+  column-gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+.left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* RIGHT SIDE CONTENT */
+.right-col {
+  font-family: "Inter", sans-serif;
+}
+
+.card-desc,
+.card-list li,
+.card-note {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  
+}
+/* LIST */
+.card-list {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+.card-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+.card-content {
+  margin-left: 63px; /* aligns under text after icon */
+}
 
 .title-with-icon {
   display: flex;
@@ -109,7 +157,7 @@ html, body {
   flex: 2;
   position: relative;
 }
-/* Move the line to the parent so it can reach the top H2 */
+
 /* THE VERTICAL LINE */
 .rf-left::before {
   content: "";
@@ -118,8 +166,7 @@ html, body {
   top: 10px; /* Aligned with your Register First title */
   width: 3px;
   
-  /* 🔥 INCREASE THIS: From 150px/300px to 600px or more */
-  /* This forces the line to draw far below the last card */
+  
   height: calc(100% + 600px); 
   
   /* Ensure the gradient stays solid at the end */
@@ -254,7 +301,8 @@ html, body {
 
 .card-list,
 .card-sublist {
-  padding-left: 18px;
+  padding-left: 20px;
+  margin: 8px 0;
 }
 
 .card-list li::marker {
@@ -272,10 +320,8 @@ html, body {
   position: absolute;
   top: 12px;
   right: 12px;
-
-  width: 30px;     /* 🔥 increased from 24px */
-  height: 30px;
-
+  width: 51px;
+  height: 51px;
   object-fit: contain;
 }
 
@@ -304,9 +350,11 @@ html, body {
   font-weight: bold;
 }
 .desc {
-  font-size: 16px;
-  color: #aaa;
-  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-style: normal; /* removes any italic */
+  line-height: 1.5;
+  max-width: 500px; /* helps control wrapping into 2 lines */
 }
 /* TITLE */
 .rf-left h2 {
@@ -582,8 +630,8 @@ html, body {
 }
 
 .box-icon {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 .side-icons {
