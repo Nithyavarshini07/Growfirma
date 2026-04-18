@@ -131,13 +131,17 @@ body {
 
 .social button {
   flex: 1;
-  padding: 10px;
-  background: transparent;
+  padding: 12px;
+  background: #070f1d; /* Same dark color as inputs */
   border-radius: 8px;
   color: white;
   cursor: pointer;
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #1a2436;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
 }
 
 /* FOCUS GREEN EFFECT */
@@ -154,18 +158,21 @@ input:focus,
 }
 
 /* INPUT */
+/* 1. Update the Input Background and Border */
 input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-
-  background: #111927;   /* ✅ SAME */
-  border: 1px solid #333;
+  padding: 12px;
+  margin: 10px 0;
+  
+  /* Use the darker shade for the field itself */
+  background: #070f1d !important; 
+  border: 1px solid #1a2436 !important; 
+  
   border-radius: 10px;
   color: white;
-
+  outline: none;
+  font-size: 14px;
 }
-
 
 /* PASSWORD */
 .password {
@@ -187,10 +194,13 @@ input {
 
 /* FORGOT */
 .forgot {
-  text-align: right;
+  display: block;
+  text-align: right; 
   font-size: 12px;
   color: #8cff00;
   cursor: pointer;
+  margin-top: 5px;
+  text-decoration: none;
 }
 
 /* BUTTON */
@@ -284,12 +294,42 @@ input {
 }
 
 @media (min-width: 1200px) {
-  .card {
-    max-width: 450px;
-  }
+ .card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px; /* Added more vertical padding to match image */
+
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+
+  /* Matches the deep navy from your previous page */
+  background: #0b1426 !important; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
 
   .left h1,
   .left h2 {
     font-size: 60px;
   }
+}
+
+/* This targets inputs specifically inside your card */
+.card input {
+  background-color: #070f1d !important;
+  border: 1px solid #1a2436 !important;
+  color: white !important;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Ensure the card itself is the correct dark navy */
+.right .card {
+  background-color: #0b1426 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
