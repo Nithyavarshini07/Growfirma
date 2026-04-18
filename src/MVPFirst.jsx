@@ -38,6 +38,7 @@ function MVPFirst() {
   ];
 
   return (
+    <div className="mvp-page-root">
     <div className="mvp-container">
 
       {/* LEFT ICON SIDEBAR */}
@@ -55,23 +56,28 @@ function MVPFirst() {
         })}
       </div>
 
-<div className="mvp-steps">
-  <span
-    className="active clickable"
-    onClick={() => navigate("/scenario")}
-  >
-    Scenario Selection
-  </span>
 
-  <span>Company Profile</span>
-  <span>Goals & Needs</span>
+<div className="mvp-nav">
+
+  <div className="logo">
+    <img src="/assets/logo.png" alt="logo" />
+  </div>
+
+  <div className="mvp-steps">
+    <span className="active clickable" onClick={() => navigate("/scenario")}>
+      <i>Scenario Selection</i>
+    </span>
+    <span><i>Company Profile</i></span>
+    <span><i>Goals & Needs</i></span>
+  </div>
+
 </div>
 
       <div className="mvp-main">
 
         {/* LEFT */}
         <div className="mvp-left">
-          <h2>MVP First</h2>
+          <h2><i>MVP First</i></h2>
           <p className="desc">
             Drive growth by letting the product deliver value and attract users.
             Continuously improve through fast iterations and user feedback cycles.
@@ -81,59 +87,58 @@ function MVPFirst() {
 
             {/* GREEN BOX */}
 {/* CARD 1 */}
-{/* CARD 1 - MVP (REGISTER STYLE MATCH) */}
-<div className="rf-card highlight">
-  <div className="inner-box multi-section-card">
+<div className="mvp-card highlight">
+  <div className="mvp-box multi-section-card">
 
-    {/* decorative top-right icon */}
-    <img src="/assets/idea.png" className="card-icon" alt="bg-icon" />
+    <img src="/assets/idea.png" className="card-icon" />
 
-    {/* SECTION 1 */}
-    <div className="section-group">
+    <div className="card-content">
 
-      <div className="title-with-icon">
-        <img src="/assets/idea2.png" className="box-icon" />
-        <h3>Idea Validation</h3>
+      {/* SECTION 1 */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/idea2.png" className="box-icon" />
+          <h3>Idea Validation</h3>
+        </div>
+
+        <p className="card-desc">
+          Helps you understand whether your idea is worth building:
+        </p>
+
+        <ul className="card-sublist">
+          <li>assumptions are tested</li>
+          <li>you build something users actually want</li>
+        </ul>
+
+        <p className="card-note">
+          Prevents wasting time and resources early.
+        </p>
       </div>
 
-      <p className="card-desc">
-        Helps you understand whether your idea is worth building:
-      </p>
+      {/* SECTION 2 */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/mvp2.png" className="box-icon" />
+          <h3>MVP Development</h3>
+        </div>
 
-      <ul className="card-sublist">
-        <li>assumptions are tested</li>
-        <li>you build something users actually want</li>
-      </ul>
+        <p className="card-desc">
+          Build a minimal working version of your product:
+        </p>
 
-      <p className="card-note">
-        Prevents wasting time and resources early.
-      </p>
-    </div>
+        <ul className="card-sublist">
+          <li>core features only</li>
+          <li>fast iteration</li>
+          <li>learning focused</li>
+        </ul>
 
-    {/* SECTION 2 */}
-    <div className="section-group">
-
-      <div className="title-with-icon">
-        <img src="/assets/mvp2.png" className="box-icon" />
-        <h3>MVP Development</h3>
+        <p className="card-note">
+          Speed matters more than perfection.
+        </p>
       </div>
 
-      <p className="card-desc">
-        Build a minimal working version of your product:
-      </p>
-
-      <ul className="card-sublist">
-        <li>builds first usable product</li>
-        <li>core features only</li>
-        <li>focus on learning & iteration</li>
-      </ul>
-
-      <p className="card-note">
-        Speed matters more than perfection.
-      </p>
     </div>
 
-    {/* IMPORTANCE (REGISTER STYLE POSITION) */}
     <div className="importance-pod">
       <span className="label">Importance</span>
       <span className="value high">High</span>
@@ -141,11 +146,9 @@ function MVPFirst() {
 
   </div>
 </div>
-            {/* BLUE BOX */}
 {/* CARD 2 */}
-{/* CARD 2 */}
-<div className="rf-card">
-  <div className="inner-box blue-box multi-section-card">
+<div className="mvp-card blue">
+  <div className="mvp-box blue-box multi-section-card">
 
     {/* MAIN ICON */}
     <img src="/assets/company.png" className="card-icon" />
@@ -206,38 +209,22 @@ function MVPFirst() {
 </div>
            {/* ORANGE BOX */}
 {/* CARD 3 */}
-<div className="rf-card optional">
-  <div className="inner-box multi-section-card">
+<div className="mvp-card optional">
+  <div className="mvp-box multi-section-card">
 
     {/* MAIN ICON */}
     <img src="/assets/service.png" className="card-icon" />
 
-    {/* SECTION 1 */}
-    <div className="section-group">
-      <div className="title-with-icon">
-        <img src="/assets/tax.png" className="box-icon" />
-        <h3>Tax</h3>
-      </div>
+    {/* TITLE */}
+    <h3 className="card-title">Optional Services</h3>
 
-      <ul className="card-sublist">
-        <li>required only after revenue starts</li>
-      </ul>
-    </div>
+    {/* CONTENT LIST */}
+    <ul className="card-sublist">
+      <li>Tax – once revenue starts</li>
+      <li>Events – after launch</li>
+    </ul>
 
-    {/* SECTION 2 */}
-    <div className="section-group">
-      <div className="title-with-icon">
-        <img src="/assets/event1.png" className="box-icon" />
-        <h3>Events</h3>
-      </div>
-
-      <ul className="card-sublist">
-        <li>use after product launch</li>
-        <li>for networking and exposure</li>
-      </ul>
-    </div>
-
-    {/* IMPORTANCE (SIDEHUSTLE STYLE — SAME AS OTHER CARDS) */}
+    {/* IMPORTANCE */}
     <div className="importance-pod">
       <span className="label">Importance</span>
       <span className="value low">Least</span>
@@ -297,18 +284,19 @@ function MVPFirst() {
 
           <img src="/assets/blank.png" alt="info" className="info-img" />
 
-          {showNext && (
+    
             <div className="next-floating">
               <button className="next-btn">
                 Next
                 <img src="/assets/next.png" className="next-icon" />
               </button>
             </div>
-          )}
+    
 
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

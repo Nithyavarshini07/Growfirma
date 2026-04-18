@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -13,6 +14,8 @@ body {
   overflow-y: auto;
 }
 
+
+
 html, body {
   height: auto !important;
   overflow-y: auto !important;
@@ -23,12 +26,26 @@ h3 {
   font-size: 18px;
 }
 
+.title {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 35px;
+}
+
+.sub-title {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+
 /* CONTAINER */
 .mvp-container {
   padding: 30px;
   padding-left: 110px;
   min-height: 100vh;
+  padding-bottom: 50px; /* Small padding so it doesn't feel cut off */
+  overflow: hidden; /* Stops the "lengthy" feel */
 }
+
 
 .mvp-main {
   display: flex;
@@ -36,15 +53,27 @@ h3 {
   align-items: flex-start;
 }
 /* NAV */
-.rf-nav {
+.mvp-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* keeps logo left */
+  justify-content: space-between;
+  width: 100%;
   padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-shrink: 0;   /* 🔥 prevents resizing/moving */
 }
 
 .logo img {
   height: 40px;
+  width: auto;
+  display: block;   /* 🔥 removes tiny baseline shift */
 }
 
 /* mvp-mvp-steps */
@@ -56,34 +85,74 @@ h3 {
 
   width: 100%;
   margin: 15px 0 25px 0;
-
-  position: relative;   /* IMPORTANT FIX */
+  font-family: "Lato", sans-serif;
+  position: relative;
+  
 }
 .mvp-steps span {
   white-space: nowrap;
   color: #aaa;
+ 
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+.mvp-steps .active {
+color: #8cff00;
+  font-weight: 700; /* Bold for active state */
+  border-bottom: 2px solid #8cff00;
+  padding-bottom: 4px;
 }
 
-.mvp-steps .active {
-  color: #8cff00;
-  border-bottom: 2px solid #8cff00;
+
+/* THE VERTICAL LINE */
+.mvp-page-root .mvp-left::before {
+  content: "";
+  position: absolute;
+  left: 40px; 
+  top: 10px;
+  width: 3px;
+  
+  /* CHANGE: height calc to 100% stops it exactly at the end of the last card */
+  height: 90%; 
+  
+  background: linear-gradient(to bottom, 
+    #8cff00 0%, 
+    #4a6cff 35%, 
+    #f9a825 70%, 
+    #f9a825 100% 
+  );
+  z-index: 1;
 }
 
 /* LEFT TITLE */
 .mvp-left h2 {
+ font-family: "Poppins", sans-serif;
   font-size: 28px;
   font-weight: 700;
   color: #8cff00;
-  font-style: italic;
   margin-bottom: 10px;
+  padding-left: 60px; /* Same as .desc */
 }
 
-.desc {
+.mvp-page-root .desc {
+  color: #aaa;
+  font-family: 'lato', sans-serif;
+  font-weight: 500;
   font-size: 18px;
-  line-height: 1.5;
-  color: #bbb;
-  max-width: 500px;
-  margin-bottom: 30px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  padding-left: 60px; /* Space from the line */
+
+  /* THE FIX: Increase max-width to let text breathe on 2 lines */
+  display: block !important;
+  width: 100% !important;
+  max-width: 650px !important; 
+  white-space: normal !important;
+  text-align: left !important;
 }
 
 /* ===== RIGHT SIDE FONT SAME AS REGISTER ===== */
@@ -97,7 +166,9 @@ h3 {
 }
 
 .mvp-right h4 {
-  font-size: 18px;
+  font-size: 16px !important;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 .mvp-right p {
@@ -106,7 +177,9 @@ h3 {
 }
 
 .mvp-right li {
-  font-size: 16px;
+  font-size: 16px !important;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 /* Progress % */
@@ -114,17 +187,18 @@ h3 {
   font-size: 16px;
 }
 
-/* MAIN */
-.mvp-steps {
-  display: flex;
-  gap: 30px;
+/* Fix the tick marks */
+.tick-list li::before {
+  content: "✔";
+  margin-right: 10px;
+  color: #8cff00;
 }
+
 
 /* LEFT PANEL */
 .mvp-left {
   flex: 2;
   position: relative;
-  flex: 2;
   min-width: 0;   /* 🔥 prevents overflow */
 }
 
@@ -142,44 +216,129 @@ h3 {
   position: absolute;
   left: 40px;
   top: 0;
+  bottom: 0;
+
   width: 3px;
-  height: calc(100% + 150px);
   background: linear-gradient(to bottom, #8cff00, #4a6cff, #f9a825);
-  z-index: 1;
+
+  z-index: 0;
 }
 
 /* CARD BASE */
-.rf-card {
+.mvp-card {
   position: relative;
   margin-bottom: 35px;
+  
 }
 
-.inner-box {
+.mvp-box {
   background: #0a1a2f;
   border-radius: 15px;
-  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
   position: relative;
+
+  padding: 16px 24px !important; 
+  min-height: auto !important; /* Prevents the box from being too tall */
+  flex: 0 1 auto;
+}
+
+
+.mvp-card h3,
+.mvp-card .card-desc,
+.mvp-card .card-note,
+.mvp-card .card-list,
+.mvp-card .card-sublist,
+.mvp-card .importance-pod,
+.mvp-card .section-group {
+  margin-left: 42px !important;
 }
 
 /* CARD COLORS */
-.rf-card.highlight .inner-box {
-  border: 2px solid #8cff00;
-  box-shadow: 0 0 18px rgba(140,255,0,0.5);
+/* BASE DOT (default white) */
+.mvp-card::before {
+  content: "";
+  position: absolute;
+  left: -46px;
+  top: 35px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  box-shadow: 0 0 6px #fff;
 }
 
-.blue-box {
-  border: 2px solid #4a6cff;
-  box-shadow: 0 0 15px rgba(74,108,255,0.4);
+/* GREEN - Card 1 */
+.mvp-card.highlight::before {
+  background: #8cff00;
+  box-shadow: 0 0 15px #8cff00;
 }
 
-.rf-card.optional .inner-box {
-  border: 2px solid orange;
-  box-shadow: 0 0 14px rgba(255,165,0,0.4);
+/* BLUE - Card 2 */
+.mvp-card.blue::before {
+  background: #4a6cff;
+  box-shadow: 0 0 15px #4a6cff;
 }
 
+/* ORANGE - Card 3 */
+.mvp-card.optional::before {
+  background: orange;
+  box-shadow: 0 0 15px orange;
+}
+
+/* Color the dots based on the card type */
+.mvp-card.highlight::before { 
+  background: #8cff00; 
+  box-shadow: 0 0 15px #8cff00; 
+}
+
+.mvp-card.optional .mvp-box {
+  border: 2px solid orange !important;
+  box-shadow: 0 0 14px rgba(255,165,0,0.4) !important;
+}
+
+.mvp-page-root .mvp-card h3 {
+  margin-left: 0 !important;   /* Fixes the left alignment */
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Tighten Card Internal Spacing */
+.mvp-page-root .multi-section-card {
+  padding: 20px 24px !important; /* Slightly tighter padding */
+  gap: 15px !important;          /* Reduces space between major sections */
+}
+
+.mvp-page-root .section-group {
+  gap: 2px !important;           /* Tightens space between Title, Desc, and List */
+}
+
+.mvp-page-root .card-sublist {
+  margin: 2px 0 2px 20px !important; /* Compact list margins */
+}
+
+.mvp-page-root .card-desc, 
+.mvp-page-root .card-note {
+  margin-left: 40px !important;  /* Aligns text with the start of the H3 text */
+  margin-bottom: 2px !important;
+}
+/* Neutralize the previous 42px offset */
+.mvp-page-root .mvp-card h3,
+.mvp-page-root .mvp-card .card-desc,
+.mvp-page-root .mvp-card .card-note,
+.mvp-page-root .mvp-card .card-list,
+.mvp-page-root .mvp-card .card-sublist,
+.mvp-page-root .mvp-card .section-group {
+  margin-left: 0 !important; 
+}
+
+/* Apply specific indent only to the content below the title */
+.mvp-page-root .section-group > *:not(.title-with-icon) {
+  margin-left: 38px !important; /* Matches the width of icon + gap */
+}
 /* CARD ICON */
 .card-icon {
   position: absolute;
@@ -216,7 +375,22 @@ h3 {
   color: #cfcfcf;
 
 }
+.card-desc,
+.card-note {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 15px;
+}
 
+.card-sublist {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+
+.card-sublist li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
 /* LIST */
 .card-list,
 .card-sublist {
@@ -243,15 +417,29 @@ h3 {
 }
 
 /* TITLE STYLE */
-.title-with-icon {
+.mvp-page-root .title-with-icon {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-start; /* Forces content to the left */
+  gap: 12px;
+  margin-left: 0 !important;   /* Removes any inherited offset */
+  margin-bottom: 6px;          /* Reduced spacing below title */
+}
+.title-with-icon h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+ left: -6px;
+ text-align: left;
 }
 
-.title-with-icon h3 {
-  font-size: 18px;
-  margin: 0;
+.title-with-icon .box-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+.mvp-page-root .timeline::before {
+  display: none !important;
 }
 
 /* TEXT STYLE (REGISTER STANDARD) */
@@ -260,6 +448,27 @@ h3 {
 .card-sublist li {
   font-size: 15px;
   line-height: 1.4;
+}
+.mvp-card .mvp-box {
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mvp-card.highlight .mvp-box {
+  padding: 14px 22px !important;   /* tighter like Register */
+  gap: 10px !important;
+}
+/* section spacing tighter */
+.mvp-card.highlight .section-group {
+  gap: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+
+.mvp-card.icon {
+  width: 32px;   /* increase size */
+  height: 32px;
 }
 
 /* SECTION SPACING CONTROL (IMPORTANT) */
@@ -279,8 +488,12 @@ h3 {
 
 /* IMPORTANCE POD SAME POSITION */
 .importance-pod {
+  padding: 10px;
+  background: rgba(29, 37, 58, 0.6);
+  border-radius: 8px;
+   margin-left: 42px;
   margin-top: 10px;
-  margin-left: 42px;
+  align-self: flex-start;
 }
 
 
@@ -328,13 +541,15 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-weight: bold;
   color: #8cff00;
-  position: relative;
+
   background: conic-gradient(
-    rgba(255,255,255,0.08) 0% 89%,
-    #8cff00 89% 100%
+    #8cff00 0% 89%,
+    rgba(255,255,255,0.08) 89% 100%
   );
+  position: relative;
 }
 
 .progress-circle::before {
@@ -347,46 +562,62 @@ h3 {
 }
 
 /* BUTTON */
-.next-floating {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.mvp-page-root .next-floating {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  z-index: 999999 !important; /* Forces it to the front */
+  display: block !important;
 }
 
 .next-btn {
   background: #8cff00;
   color: black;
-  padding: 10px 18px;
-  border-radius: 12px;
-  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-size: 16px;
   font-weight: 600;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(140,255,0,0.6);
-  transition: 0.3s;
-  display: flex;
+
+  display: inline-flex;
   align-items: center;
   gap: 10px;
+
+  /* The "Register Page" Glow */
+  box-shadow: 0 0 15px rgba(140, 255, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Hover effect for a premium feel */
 .next-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 18px rgba(140,255,0,0.9);
+  box-shadow: 0 0 22px rgba(140, 255, 0, 0.9);
 }
 
+.next-icon {
+  width: 18px;
+  height: auto;
+  display: block;
+}
 /* SIDEBAR */
 .side-icons {
   position: fixed;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  height: 75vh;
+
   width: 65px;
+  height: auto;
+
   background: linear-gradient(180deg, #0f1f35, #0a1628);
   border-radius: 35px;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 22px;
   align-items: center;
+
   padding: 25px 0;
 }
 
@@ -424,24 +655,92 @@ h3 {
 
 /* IMPORTANCE POD */
 .importance-pod {
-  margin-top: 14px;
-  margin-left: 0;
+  /* Box Position */
+  margin-top: 12px;
+  margin-left: 42px; /* Keeps the pod box aligned with your text column */
+  align-self: flex-start; /* Prevents the box from stretching to full width */
 
+  /* Internal Centering */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;      /* Centers text horizontally */
+  justify-content: center;    /* Centers text vertically */
+  text-align: center;         /* Centers text if it wraps */
 
-  padding: 10px 14px;
+  /* Box Styling */
+  padding: 8px 16px; 
+  min-width: 110px;           /* Ensures a consistent width for centering */
   background: rgba(29, 37, 58, 0.6);
   border-radius: 8px;
 }
 
-.importance-pod .label {
-  font-size: 13px;
-  color: #9ca3af;
-  font-weight: 600;
+/* Optional: Ensure the spans inside don't have weird margins */
+.importance-pod span {
+  margin: 0;
+  display: block;
+  width: 100%;
 }
 
-.importance-pod .value.high { color: #8cff00; }
-.importance-pod .value.mid { color: #4a6cff; }
-.importance-pod .value.low { color: #f9a825; }
+.importance-pod .label {
+  color: #9CA3AF;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  margin-bottom: 2px;
+  font-weight: 600; /* semi-bold */
+  text-align: center;
+}
+
+.importance-pod .value {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  background: transparent !important;
+  padding: 0;
+  border: none;
+}
+/* ONLY TEXT COLORS INSIDE importance box */
+.importance-pod .high {
+  color: #A3FF12 !important;
+  background: none !important;
+}
+
+.importance-pod .mid {
+ 
+  background: none !important;
+  color: #00C9FF !important;
+}
+
+.importance-pod .low {
+ 
+  background: none !important;
+   color: #F97316 !important;
+}
+/* Tighten the main container of Card 2 */
+.mvp-page-root .blue-box.multi-section-card {
+  padding: 16px 24px !important; /* Reduced vertical padding from 24px to 16px */
+  gap: 8px !important;           /* Tiny gap between Registration, Law, and HR sections */
+}
+
+/* Tighten individual groups (Title + List) */
+.mvp-page-root .blue-box .section-group {
+  gap: 0px !important;           /* Removes gap between H3 and the UL below it */
+  margin-bottom: 4px !important; /* Small breathing room before next section starts */
+}
+
+/* Match the left-alignment and remove extra margins */
+.mvp-page-root .blue-box .title-with-icon {
+  margin-left: 0 !important;
+  margin-bottom: 2px !important; /* Pulls the list up closer to the title */
+}
+
+.mvp-page-root .blue-box .card-sublist {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 50px !important; /* Standard bullet indent */
+  margin-left: 38px !important;  /* Aligns bullet text under the H3 text */
+}
+
+.mvp-page-root .blue-box li {
+  margin-bottom: 2px !important;
+  line-height: 1.3 !important;
+}
