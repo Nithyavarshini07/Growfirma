@@ -24,35 +24,23 @@ function ScenarioSelection() {
     navigate("/login");
   };
 
-  const handleContinue = () => {
-    if (selectedIndex === null) {
-      alert("Please select a scenario");
-      return;
-    }
+const handleContinue = () => {
+  if (selectedIndex === null) {
+    alert("Please select a scenario");
+    return;
+  }
 
-    const selectedCard = cards[selectedIndex];
+  const title = cards[selectedIndex].title;
 
-    if (selectedCard.title === "MVP First") {
-      navigate("/mvp-first");
-    }
-
-    if (selectedCard.title === "Side - hustle") {
-      navigate("/side-hustle");
-    }
-
-    if (selectedCard.title === "Register First") {
-      navigate("/register-first");
-    }
-
-    if (selectedCard.title === "Exit -Oriented") {
-      navigate("/exit-oriented");
-    }
-
-    if (selectedCard.title === "Revenue First") {
-      navigate("/revenue-first");
-    }
-    navigate("/company-profile");
-  };
+  if (title === "Register First") navigate("/register-first");
+  else if (title === "MVP First") navigate("/mvp-first");
+  else if (title === "Exit -Oriented") navigate("/exit-oriented");
+  else if (title === "Revenue First") navigate("/revenue-first");
+  else if (title === "Side - hustle") navigate("/side-hustle");
+  else {
+    alert("Page not built yet for this scenario");
+  }
+};
 
   return (
     <div className="scenario-wrapper">

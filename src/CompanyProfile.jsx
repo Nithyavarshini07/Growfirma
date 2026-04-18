@@ -1,20 +1,34 @@
 import React from "react";
 import "./CompanyProfile.css";
+import { useNavigate } from "react-router-dom";
 
 const CompanyProfile = () => {
+  const navigate = useNavigate(); // ✅ FIXED LOCATION
+
   return (
     <div className="page">
-      {/* NAVIGATION */}
       <header className="main-nav">
         <div className="logo-container">
           <span className="logo-plus">+</span>
-          <span className="logo-text">Grow<span className="logo-bold">Firma</span></span>
+          <span className="logo-text">
+            Grow<span className="logo-bold">Firma</span>
+          </span>
         </div>
+
         <nav className="nav-links">
-          <div className="nav-item">Scenario Selection</div>
-          <div className="nav-item active">Company Profile</div>
-          <div className="nav-item">Goals & Needs</div>
+          <div className="nav-item" onClick={() => navigate("/scenario")}>
+            Scenario Selection
+          </div>
+
+          <div className="nav-item active">
+            Company Profile
+          </div>
+
+          <div className="nav-item">
+            Goals & Needs
+          </div>
         </nav>
+
         <div className="header-spacer"></div>
       </header>
 

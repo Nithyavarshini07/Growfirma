@@ -175,9 +175,11 @@ textarea {
 .form-title {
   color: var(--neon-green);
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 800; /* Extra bold */
   font-style: italic;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;;
 }
 
 .form-description {
@@ -209,18 +211,26 @@ textarea {
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
 /* TOGGLES */
-.toggle-btns { display: flex; background: #000; padding: 4px; border-radius: 10px; width: fit-content; gap: 5px; }
+.toggle-btns { display: flex; 
+  background: transparent; /* Remove black background from container */
+  padding: 0; 
+  gap: 10px; /* Space between buttons */
+  width: 100%; }
 .btn-toggle {
-  background: transparent;
-  border: none;
+  flex: 1; /* Makes both buttons equal width */
+  background: #0a1324;
+  border: 1px solid var(--border-color);
   color: white;
-  padding: 8px 30px;
-  border-radius: 8px;
+  padding: 12px 0;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 .btn-toggle.active {
-  background: #1a2332;
-  border: 1px solid var(--neon-green);
+  background: rgba(178, 255, 89, 0.1);
+  border: 1.5px solid var(--neon-green);
+  color: white;
 }
 
 /* FOOTER */
@@ -304,10 +314,10 @@ textarea {
 }
 
 .percentage {
-  color: #b2ff59;
+  color: #ffffff; /* It's actually white in the image center */
   font-size: 28px;
-  font-weight: 900;
-  line-height: 1;
+  font-weight: 400; /* Lighter weight than before */
+  font-family: 'Poppins', sans-serif;
 }
 
 .complete-label {
@@ -349,102 +359,36 @@ textarea {
 svg circle:nth-child(2) {
   filter: drop-shadow(0 0 4px rgba(178, 255, 89, 0.3));
 }
-/* Header styling */
-.compliance-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
 
-.compliance-header h4 {
-  margin: 0;
-  font-size: 15px;
-  color: #ffffff;
-  font-weight: 600;
-}
 
-.shield-icon {
-  color: #00d2ff;
-  font-size: 18px;
-}
-
-/* List container */
-.compliance-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-/* Individual Item Base */
-.compliance-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px 15px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03); /* Default subtle dark bg */
-  transition: transform 0.2s ease;
-}
-
-.status-icon {
-  font-size: 14px;
-  margin-top: 2px;
-}
-
-.status-text strong {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-
-.status-text p {
-  margin: 0;
-  font-size: 11px;
-  color: #a3b1cc;
-  line-height: 1.4;
-  opacity: 0.8;
-}
 
 /* Success State (Green) */
 .status-success {
-  background: rgba(178, 255, 89, 0.05);
-  border: 1px solid rgba(178, 255, 89, 0.1);
+  background: rgba(45, 255, 122, 0.05); /* Very subtle green tint */
 }
-.status-success strong { color: #b2ff59; }
+.status-success strong {
+  color: #2dff7a; /* Neon Green text */
+}
 
-/* Warning State (Red/Orange) */
+/* Warning/Error State (Red/Orange) */
 .status-warning {
-  background: rgba(255, 77, 77, 0.05);
-  border: 1px solid rgba(255, 77, 77, 0.1);
+  background: rgba(255, 77, 77, 0.05); /* Very subtle red tint */
 }
-.status-warning strong { color: #ff6b6b; }
+.status-warning strong {
+  color: #ff4d4d; /* Red text */
+}
 
-/* Pending State (Gray/Blue) */
+/* Pending State (Gray) */
 .status-pending {
   background: rgba(163, 177, 204, 0.05);
-  border: 1px solid rgba(163, 177, 204, 0.1);
 }
-.status-pending strong { color: #a3b1cc; }
+.status-pending strong {
+  color: #a3b1cc;
+}
 
-/* Diagnostic Button Refinement */
-.scan-btn {
-  width: 100%;
-  padding: 14px;
-  background: rgba(0, 210, 255, 0.05);
-  border: 1px solid rgba(0, 210, 255, 0.2);
-  color: #00d2ff;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 700;
+.status-text p {
+  margin: 4px 0 0 0;
   font-size: 12px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-
-.scan-btn:hover {
-  background: rgba(0, 210, 255, 0.1);
-  border-color: #00d2ff;
-  box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+  color: var(--text-gray);
+  line-height: 1.4;
 }
