@@ -83,84 +83,171 @@ function MVPFirst() {
           <div className="timeline">
 
             {/* GREEN BOX */}
-            <div className="rf-card highlight">
-              <div className="inner-box">
-                <img src="/assets/idea.png" className="card-icon" />
+{/* CARD 1 */}
+{/* CARD 1 - MVP (REGISTER STYLE MATCH) */}
+<div className="rf-card highlight">
+  <div className="inner-box multi-section-card">
 
-               <div className="title-with-icon">
-  <img src="/assets/idea2.png" alt="Idea Validation" className="box-icon" />
-  <h3>Idea Validation</h3>
+    {/* decorative top-right icon */}
+    <img src="/assets/idea.png" className="card-icon" alt="bg-icon" />
+
+    {/* SECTION 1 */}
+    <div className="section-group">
+
+      <div className="title-with-icon">
+        <img src="/assets/idea2.png" className="box-icon" />
+        <h3>Idea Validation</h3>
+      </div>
+
+      <p className="card-desc">
+        Helps you understand whether your idea is worth building:
+      </p>
+
+      <ul className="card-sublist">
+        <li>assumptions are tested</li>
+        <li>you build something users actually want</li>
+      </ul>
+
+      <p className="card-note">
+        Prevents wasting time and resources early.
+      </p>
+    </div>
+
+    {/* SECTION 2 */}
+    <div className="section-group">
+
+      <div className="title-with-icon">
+        <img src="/assets/mvp2.png" className="box-icon" />
+        <h3>MVP Development</h3>
+      </div>
+
+      <p className="card-desc">
+        Build a minimal working version of your product:
+      </p>
+
+      <ul className="card-sublist">
+        <li>builds first usable product</li>
+        <li>core features only</li>
+        <li>focus on learning & iteration</li>
+      </ul>
+
+      <p className="card-note">
+        Speed matters more than perfection.
+      </p>
+    </div>
+
+    {/* IMPORTANCE (REGISTER STYLE POSITION) */}
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value high">High</span>
+    </div>
+
+  </div>
 </div>
-                <ul className="card-list">
-                  <li>assumptions are tested</li>
-                  <li>you are building something users actually want</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/mvp2.png" alt="MVP Development" className="box-icon" />
-  <h3>MVP Development</h3>
-</div>
-                <ul className="card-list">
-                  <li>builds your first usable product</li>
-                  <li>core features only</li>
-                  <li>focus on learning and iteration</li>
-                </ul>
-
-                <span className="tag high">Importance High</span>
-              </div>
-            </div>
-
             {/* BLUE BOX */}
-            <div className="rf-card">
-              <div className="inner-box blue-box">
-                <img src="/assets/company.png" className="card-icon" />
+{/* CARD 2 */}
+{/* CARD 2 */}
+<div className="rf-card">
+  <div className="inner-box blue-box multi-section-card">
 
-                <div className="title-with-icon">
-  <img src="/assets/company2.png" alt="Company Registration" className="box-icon" />
-  <h3>Company Registration</h3>
+    {/* MAIN ICON */}
+    <img src="/assets/company.png" className="card-icon" />
+
+    {/* SECTION 1 */}
+    <div className="section-group">
+
+      <div className="title-with-icon">
+        <img src="/assets/company1.png" className="box-icon" />
+        <h3>Company Registration</h3>
+      </div>
+
+      <ul className="card-sublist">
+        <li>charge users</li>
+        <li>work with contractors</li>
+        <li>require a legal entity</li>
+      </ul>
+
+    </div>
+
+    {/* SECTION 2 */}
+    <div className="section-group">
+
+      <div className="title-with-icon">
+        <img src="/assets/law1.png" className="box-icon" />
+        <h3>Law</h3>
+      </div>
+
+      <ul className="card-sublist">
+        <li>founder agreements</li>
+        <li>development and partner contracts</li>
+      </ul>
+
+    </div>
+
+    {/* SECTION 3 */}
+    <div className="section-group">
+
+      <div className="title-with-icon">
+        <img src="/assets/hr1.png" className="box-icon" />
+        <h3>HR / Talent</h3>
+      </div>
+
+      <ul className="card-sublist">
+        <li>early hiring</li>
+        <li>contractor or freelancer setup</li>
+      </ul>
+
+    </div>
+
+    {/* IMPORTANCE (SIDEHUSTLE STYLE) */}
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value mid">Moderate</span>
+    </div>
+
+  </div>
 </div>
-                <ul className="card-sublist blue-bullets">
-                  <li>charge users</li>
-                  <li>work with contractors</li>
-                  <li>require a legal entity</li>
-                </ul>
+           {/* ORANGE BOX */}
+{/* CARD 3 */}
+<div className="rf-card optional">
+  <div className="inner-box multi-section-card">
 
-                <div className="title-with-icon">
-  <img src="/assets/law1.png" alt="Law" className="box-icon" />
-  <h3>Law</h3>
+    {/* MAIN ICON */}
+    <img src="/assets/service.png" className="card-icon" />
+
+    {/* SECTION 1 */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/tax.png" className="box-icon" />
+        <h3>Tax</h3>
+      </div>
+
+      <ul className="card-sublist">
+        <li>required only after revenue starts</li>
+      </ul>
+    </div>
+
+    {/* SECTION 2 */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/event1.png" className="box-icon" />
+        <h3>Events</h3>
+      </div>
+
+      <ul className="card-sublist">
+        <li>use after product launch</li>
+        <li>for networking and exposure</li>
+      </ul>
+    </div>
+
+    {/* IMPORTANCE (SIDEHUSTLE STYLE — SAME AS OTHER CARDS) */}
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value low">Least</span>
+    </div>
+
+  </div>
 </div>
-                <ul className="card-sublist blue-bullets">
-                  <li>founder agreements</li>
-                  <li>development and partner contracts</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/hr1.png" alt="HR Talent" className="box-icon" />
-  <h3>HR / Talent</h3>
-</div>
-                <ul className="card-sublist blue-bullets">
-                  <li>early hiring</li>
-                  <li>contractor or freelancer setup</li>
-                </ul>
-
-                <span className="tag mid">Importance Moderate</span>
-              </div>
-            </div>
-
-            {/* ORANGE BOX */}
-            <div className="rf-card optional">
-              <div className="inner-box">
-                <img src="/assets/service.png" className="card-icon" />
-
-                <h3>Optional Services</h3>
-                <ul className="card-sublist orange-bullets">
-                  <li>Tax – once revenue starts</li>
-                  <li>Events – after launch</li>
-                </ul>
-
-                <span className="tag low">Importance Least</span>
-              </div>
-            </div>
 
           </div>
         </div>
@@ -169,38 +256,47 @@ function MVPFirst() {
         <div className="rf-right">
 
           <div className="success-box">
-            <h4 className="sp-title"><i><u>SUCCESS PREDICTION</u></i></h4>
-            <div className="progress-circle">
-              <span>89%</span>
-            </div>
-            <p className="sp-desc">
-              Based on the current market volatility and your historical portfolio performance
-            </p>
-          </div>
+  <h4 className="sp-title">
+    <i><u>SUCCESS PREDICTION</u></i>
+  </h4>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/what.png" className="box-icon" />
-              <h4>What is this?</h4>
-            </div>
-            <p>
-              This scenario focuses on turning an idea into a working product and
-              getting it in front of users quickly.
-            </p>
-            <p>Execution is the priority.</p>
-          </div>
+  <div className="progress-circle">
+    <span>89%</span>
+  </div>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/whatfor.png" className="box-icon" />
-              <h4>Who is this for?</h4>
-            </div>
-            <ul className="tick-list">
-              <li>Founders ready to build</li>
-              <li>Teams preparing for launch</li>
-              <li>Startups with clear product direction</li>
-            </ul>
-          </div>
+  <p className="sp-desc">
+    Based on the current market volatility and your historical portfolio performance
+  </p>
+</div>
+
+<div className="info-box">
+  <div className="info-title">
+    <img src="/assets/what.png" alt="info" className="box-icon what-icon" />
+    <h4 className="what-title">What is this?</h4>
+  </div>
+
+  <p className="what-text">
+    This scenario focuses on turning an idea into a working product and
+    getting it in front of users quickly.
+  </p>
+
+  <p className="what-text">
+    Execution is the priority.
+  </p>
+</div>
+
+<div className="info-box">
+  <div className="info-title">
+    <img src="/assets/whatfor.png" alt="users" className="box-icon who-icon" />
+    <h4 className="who-title">Who is this for?</h4>
+  </div>
+
+  <ul className="tick-list who-list">
+    <li>Founders ready to build</li>
+    <li>Teams preparing for launch</li>
+    <li>Startups with clear product direction</li>
+  </ul>
+</div>
 
           <img src="/assets/blank.png" alt="info" className="info-img" />
 

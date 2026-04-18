@@ -65,93 +65,144 @@ function SideHustle() {
 
           <div className="timeline">
 
-            {/* CARD 1 */}
-            <div className="rf-card highlight">
-              <div className="inner-box">
-                <img src="/assets/idea.png" className="card-icon" />
+           {/* CARD 1 */}
+<div className="rf-card highlight">
+  <div className="inner-box blue-box">
 
-                <h3>Idea Validation</h3>
-                <p className="card-desc">Helps you understand:</p>
+    <img src="/assets/company.png" className="card-icon" />
 
-                <ul className="card-list">
-                  <li>whether a real problem exists</li>
-                  <li>who your users are</li>
-                  <li>if the idea is worth pursuing</li>
-                </ul>
+    <h3>Company Registration</h3>
 
-                <p className="card-note">
-                  This prevents wasted time and money.
-                </p>
-              </div>
+    <p className="card-desc">
+      Creates your legal business entity and official address so you can:
+    </p>
 
-              <span className="tag high">High</span>
-            </div>
+    <ul className="card-list">
+      <li>Operate as a company</li>
+      <li>Sign contracts</li>
+      <li>Open a bank account</li>
+    </ul>
 
-            {/* CARD 2 */}
-            <div className="rf-card">
-              <div className="inner-box blue-box">
-                <img src="/assets/mvp.png" className="card-icon" />
+    <p className="card-note">
+      This is the foundation of everything else.
+    </p>
 
-                <div className="title-with-icon">
-  <img src="/assets/mvp1.png" alt="MVP" className="box-icon" />
-  <h3>MVP Development (lean)</h3>
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value high">High</span>
+    </div>
+
+  </div>
 </div>
 
-                <p className="card-desc">
-                  Prepares your company for financial activity by:
-                </p>
+{/* CARD 2 */}
+<div className="rf-card">
+  <div className="inner-box blue-box multi-section-card">
 
-                <ul className="card-sublist">
-                  <li>registering for tax</li>
-                  <li>handling VAT setup if required</li>
-                </ul>
+    {/* Decorative Icon */}
+    <img src="/assets/mvp.png" className="card-icon" alt="background" />
 
-                <p className="card-note">
-                  Useful if you plan to start operating soon.
-                </p>
+    <div className="card-content">
 
-                <div className="title-with-icon">
-  <img src="/assets/event1.png" alt="Events" className="box-icon" />
-  <h3 className="sub-heading">Events</h3>
+      {/* SECTION 1: MVP */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/mvp1.png" alt="MVP" className="box-icon" />
+          <h3>MVP Development (lean)</h3>
+        </div>
+
+        <p className="card-desc">
+          Helps you quickly build a working version of your idea:
+        </p>
+
+        <ul className="card-sublist">
+          <li>validate core idea fast</li>
+          <li>build minimal working product</li>
+          <li>test real user response</li>
+        </ul>
+
+        <p className="card-note">
+          Focus is speed, not perfection.
+        </p>
+      </div>
+
+      {/* SECTION 2: EVENTS */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/event1.png" alt="Events" className="box-icon" />
+          <h3>Events</h3>
+        </div>
+
+        <p className="card-desc">
+          Helps you grow through exposure:
+        </p>
+
+        <ul className="card-sublist">
+          <li>startup networking opportunities</li>
+          <li>learning from other founders</li>
+          <li>getting early feedback</li>
+        </ul>
+
+        <p className="card-note">
+          Useful for visibility and connections.
+        </p>
+      </div>
+
+      {/* SECTION 3: SOCIAL MEDIA */}
+      <div className="section-group">
+        <div className="title-with-icon">
+          <img src="/assets/social1.png" alt="Social Media" className="box-icon" />
+          <h3>Social Media Marketing</h3>
+        </div>
+
+        <p className="card-desc">
+          Used to test and grow your idea:
+        </p>
+
+        <ul className="card-sublist">
+          <li>validate messaging</li>
+          <li>build early audience</li>
+          <li>create personal brand visibility</li>
+        </ul>
+
+        <p className="card-note">
+          Works best when used experimentally.
+        </p>
+      </div>
+
+    </div>
+
+    {/* IMPORTANCE (ONLY ONE - INSIDE inner-box) */}
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value mid">Moderate</span>
+    </div>
+
+  </div>
 </div>
-                <ul className="card-sublist">
-                  <li>learning opportunities</li>
-                  <li>startup communities</li>
-                  <li>early feedback and inspiration</li>
-                </ul>
 
-                <div className="title-with-icon">
-  <img src="/assets/social1.png" alt="Social Media" className="box-icon" />
-  <h3 className="sub-heading">Social Media Marketing</h3>
+{/* CARD 3 */}
+<div className="rf-card optional">
+  <div className="inner-box">
+
+    <img src="/assets/service.png" className="card-icon" />
+
+    <h3>Optional Services</h3>
+
+    <ul className="card-sublist">
+      <li><strong>Idea Validation</strong> - if your idea isn't tested yet</li>
+      <li><strong>MVP Development</strong> - when you are ready to build</li>
+      <li><strong>Social Media Marketing</strong> - once you are active</li>
+      <li><strong>Events</strong> - when you want ecosystem exposure</li>
+    </ul>
+
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value low">Least</span>
+    </div>
+
+  </div>
 </div>
-                <p className="card-desc">Used experimentally to:</p>
-
-                <ul className="card-sublist">
-                  <li>test messaging</li>
-                  <li>build early visibility or personal branding</li>
-                </ul>
-              </div>
-
-              <span className="tag mid">Moderate</span>
-            </div>
-
-            {/* CARD 3 */}
-            <div className="rf-card optional">
-              <div className="inner-box">
-                <img src="/assets/service.png" className="card-icon" />
-
-                <h3>Optional Services</h3>
-
-                <ul className="card-sublist">
-                  <li>HR / Talent – rarely needed at this stage</li>
-                  <li>Company Registration – only if traction appears</li>
-                  <li>Law – usually unnecessary early</li>
-                  <li>Tax – not needed without revenue</li>
-                </ul>
-              </div>
-
-              <span className="tag low">Least</span>
-            </div>
 
           </div>
         </div>
@@ -171,32 +222,33 @@ function SideHustle() {
             </p>
           </div>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/what.png" className="box-icon" />
-              <h4>What is this?</h4>
-            </div>
+        <div className="info-box">
+  <div className="info-title">
+    <img src="/assets/what.png" alt="info" className="box-icon what-icon" />
+    <h4 className="what-title">What is this?</h4>
+  </div>
 
-            <p>
-              This scenario is about testing an idea with minimal risk and commitment.
-            </p>
-            <p>
-              You are exploring, not building a full company yet.
-            </p>
-          </div>
+  <p className="what-text">
+    This scenario is about testing an idea with minimal risk and commitment.
+  </p>
 
-          <div className="info-box">
-            <div className="info-title">
-              <img src="/assets/whatfor.png" className="box-icon" />
-              <h4>Who is this for?</h4>
-            </div>
+  <p className="what-text">
+    You are exploring, not building a full company yet.
+  </p>
+</div>
 
-            <ul className="tick-list">
-              <li>Part-time founders</li>
-              <li>Students and professionals testing ideas</li>
-              <li>Solo builders who want flexibility</li>
-            </ul>
-          </div>
+<div className="info-box">
+  <div className="info-title">
+    <img src="/assets/whatfor.png" alt="users" className="box-icon who-icon" />
+    <h4 className="who-title">Who is this for?</h4>
+  </div>
+
+  <ul className="tick-list who-list">
+    <li>Part-time founders</li>
+    <li>Students and professionals testing ideas</li>
+    <li>Solo builders who want flexibility</li>
+  </ul>
+</div>
 
           <img src="/assets/blank.png" alt="info" className="info-img" />
 

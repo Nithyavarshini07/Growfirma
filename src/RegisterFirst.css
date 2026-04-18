@@ -202,31 +202,40 @@ html, body {
 
 
 .importance-pod {
-  width: 114px;
-  height: 57px;
-  border-radius: 10px;
+  /* Box Position */
+  margin-top: 12px;
+  margin-left: 42px; /* Keeps the pod box aligned with your text column */
+  align-self: flex-start; /* Prevents the box from stretching to full width */
 
+  /* Internal Centering */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: center;      /* Centers text horizontally */
+  justify-content: center;    /* Centers text vertically */
+  text-align: center;         /* Centers text if it wraps */
 
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
+  /* Box Styling */
+  padding: 8px 16px; 
+  min-width: 110px;           /* Ensures a consistent width for centering */
+  background: rgba(29, 37, 58, 0.6);
+  border-radius: 8px;
+}
 
-  background: #1D253A80 !important;
-  margin-top: 20px;
-  margin-top: auto;   /* 🔥 SPACE ABOVE BOX */
-
+/* Optional: Ensure the spans inside don't have weird margins */
+.importance-pod span {
+  margin: 0;
+  display: block;
+  width: 100%;
 }
 
 .importance-pod .label {
   color: #9CA3AF;
   font-family: "Inter", sans-serif;
   font-size: 15px;
+  margin-bottom: 2px;
   font-weight: 600; /* semi-bold */
+  text-align: center;
 }
-
 
 .importance-pod .value {
   font-family: "Inter", sans-serif;
@@ -252,10 +261,6 @@ html, body {
  
   background: none !important;
    color: #F97316 !important;
-}
-/* Remove the old line from .timeline so they don't double up */
-.timeline::before {
-  display: none;
 }
 .rf-right {
   flex: 1;
@@ -288,6 +293,7 @@ html, body {
   
   background: linear-gradient(to bottom, #8cff00, #4a6cff, #f9a825);
   z-index: 1;
+    display: none;
 }
 /* CARD */
 .rf-card {
@@ -323,11 +329,6 @@ html, body {
   gap: 20px; /* Space between Tax, Law, and HR sections */
 }
 
-/* GREEN GLOW */
-.rf-card.highlight .inner-box {
-  border: 2px solid #8cff00;
-  box-shadow: 0 0 15px rgba(140,255,0,0.5);
-}
 
 /* ORANGE GLOW (FIXED SINGLE BOX) */
 .rf-card.optional .inner-box {
@@ -395,15 +396,6 @@ html, body {
   color: #8cff00;
 }
 
-.next-btn {
-  background: #8cff00;
-  color: black;
-  padding: 12px;
-  width: 100%;
-  border-radius: 10px;
-  border: none;
-  font-weight: bold;
-}
 .desc {
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -420,9 +412,6 @@ html, body {
   margin-bottom: 10px;
 }
 
-.inner-box {
-  position: relative;
-}
 
 .rf-card {
   margin-bottom: 35px;
@@ -464,13 +453,6 @@ html, body {
   box-shadow: 0 0 15px #4a6cff, 0 0 30px rgba(74, 108, 255, 0.4);
 }
 
-/* ORANGE DOT (Optional Services) */
-.rf-card.optional::before {
-  background: #f9a825;
-  box-shadow: 0 0 15px #f9a825, 0 0 30px rgba(249, 168, 37, 0.4);
-}
-
-
 .rf-card:last-child {
   margin-bottom: 120px;   /* 🔥 BIG SPACE BELOW ORANGE BOX */
 }
@@ -478,11 +460,6 @@ html, body {
 
 .rf-card.optional {
   margin-bottom: 120px !important;  /* 🔥 FORCE SPACE */
-}
-/* GREEN */
-.rf-card.highlight::before {
-  background: #8cff00;
-  box-shadow: 0 0 10px #8cff00;
 }
 
 /* BLUE */
@@ -564,15 +541,15 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
+  padding: 12px;
+  width: 100%;
 }
 
 .next-icon {
   width: 18px;
 }
 
-.rf-container {
-  padding-left: 110px;
-}
 
 /* HOVER EFFECT */
 .next-btn:hover {
@@ -683,11 +660,6 @@ html, body {
 
 }
 
-.box-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
 .side-icons {
   position: fixed;
   left: 20px;
@@ -735,7 +707,14 @@ html, body {
           brightness(110%) contrast(110%)
           drop-shadow(0 0 10px #8cff00);
 }
+/* Title */
+.what-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
 
+<<<<<<< HEAD
 /* --- CARD 2 SPECIFIC STYLES --- */
 
 /* The main container */
@@ -878,16 +857,194 @@ html, body {
 /* Force Importance Pods to the bottom left of the column */
 .rf-card.highlight .importance-pod,
 .rf-card.optional .importance-pod {
-  margin-top: auto;
+
   align-self: flex-start;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 12px;
+
   background: rgba(29, 37, 58, 0.6);
   border-radius: 8px;
+   margin-top: 8px;
+  padding: 6px 12px;
 }
 
 /* Color highlights for values */
 .value.high { color: #8cff00 !important; font-weight: bold; }
 .value.low { color: #f9a825 !important; font-weight: bold; }
+
+/* Paragraphs */
+.what-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+/* Icon size */
+.what-icon {
+  width: 39px;
+  height: 39px;
+}
+/* Title */
+.who-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+/* List items */
+.who-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+/* Icon size */
+.who-icon {
+  width: 39px;
+  height: 39px;
+}
+
+/* --- SHARED MULTI-SECTION ALIGNMENT --- */
+
+.rf-card .inner-box {
+  display: flex;
+  flex-direction: column;
+  padding: 24px !important;
+  gap: 16px;
+  min-height: auto; /* CRITICAL: removes the extra empty space */
+  position: relative;
+}
+
+/* Base style for the importance pod (shared) */
+.importance-pod {
+  margin-top: 12px;
+  align-self: flex-start;
+  padding: 8px 12px;
+  background: rgba(29, 37, 58, 0.6);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CARD 1 (HIGHLIGHT / COMPANY REGISTRATION) --- */
+
+/* Indent Card 1 content to align with Card 2's column (42px) */
+.rf-card.highlight h3,
+.rf-card.highlight .card-desc,
+.rf-card.highlight .card-note,
+.rf-card.highlight .card-list,
+.rf-card.highlight .importance-pod {
+  margin-left: 42px; /* Pulls everything into the column */
+}
+
+/* Standard bullet indentation */
+.rf-card.highlight .card-list {
+  padding-left: 20px;
+}
+
+/* Corner Icon for Card 1 */
+.rf-card.highlight .card-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 42px;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* High Importance Value Color (Green) */
+.importance-pod .value.high {
+  color: #8cff00 !important;
+}
+
+/* --- CARD 3 (OPTIONAL / OPTIONAL SERVICES) --- */
+
+.rf-card.optional .inner-box {
+  border: 2px solid #f9a825 !important; /* Orange */
+  box-shadow: 0 0 15px rgba(249, 168, 37, 0.3);
+}
+
+/* Indent Card 3 content (42px) */
+.rf-card.optional h3,
+.rf-card.optional .card-sublist,
+.rf-card.optional .importance-pod {
+  margin-left: 42px;
+}
+
+.rf-card.optional .card-sublist {
+  padding-left: 20px;
+}
+
+/* Corner Icon for Card 3 */
+.rf-card.optional .card-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 42px;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* Least Importance Value Color (Orange) */
+.importance-pod .value.low {
+  color: #f9a825 !important;
+}
+
+.card-list, .card-sublist {
+  margin: 2px 0 !important;
+  padding-left: 20px;
+}
+
+/* Remove extra margins from text to shrink size further */
+.rf-card.highlight p,
+.rf-card.optional p {
+  margin: 0 !important;
+  line-height: 1.3;
+}
+/* Maintain the 42px indentation column */
+.rf-card.highlight h3,
+.rf-card.highlight .card-desc,
+.rf-card.highlight .card-note,
+.rf-card.highlight .card-list,
+.rf-card.optional h3,
+.rf-card.optional .card-sublist,
+.rf-card.optional .importance-pod,
+.rf-card.highlight .importance-pod {
+  margin-left: 42px;
+}
+.rf-card.highlight .inner-box,
+.rf-card.optional .inner-box {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 16px 24px !important; 
+  
+  gap: 8px; 
+  
+  min-height: auto !important;
+  flex: 0 1 auto; 
+}
+.rf-card.highlight .card-desc,
+.rf-card.highlight .card-note {
+  margin-left: 42px !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+/* Force the Title, List, and Pod to the 42px Alignment Column */
+.rf-card.highlight h3, 
+.rf-card.highlight .card-list,
+.rf-card.highlight .importance-pod,
+.rf-card.optional h3, 
+.rf-card.optional .card-sublist,
+.rf-card.optional .importance-pod {
+  margin-left: 42px !important;
+  padding-left: 0 !important; /* Resetting padding to ensure margin handles alignment */
+}
+
+/* Adjust the bullets so they sit inside the column */
+.rf-card.highlight .card-list,
+.rf-card.optional .card-sublist {
+  padding-left: 20px !important; /* This creates space for the bullet dot itself */
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

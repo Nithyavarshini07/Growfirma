@@ -80,102 +80,141 @@ function ExitOriented() {
           <div className="timeline">
 
             {/* GREEN CARD */}
-            <div className="rf-card highlight">
-              <div className="inner-box">
-                <img src="/assets/law.png" className="card-icon" />
+            {/* CARD 1 - LAW / TAX / COMPANY (REGISTER STYLE) */}
+<div className="rf-card highlight">
+  <div className="inner-box multi-section-card">
 
-               <div className="title-with-icon">
-  <img src="/assets/law2.png" className="box-icon" alt="Law" />
-  <h3>Law</h3>
+    <img src="/assets/law.png" className="card-icon" />
+
+    {/* LAW */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/law2.png" className="box-icon" />
+        <h3>Law</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>clean company structure</li>
+        <li>clear ownership & responsibilities</li>
+        <li>contracts buyers expect</li>
+      </ul>
+    </div>
+
+    {/* TAX */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/tax2.png" className="box-icon" />
+        <h3>Tax</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>compliant accounting</li>
+        <li>transparent financial records</li>
+      </ul>
+    </div>
+
+    {/* COMPANY */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/company2.png" className="box-icon" />
+        <h3>Company Registration</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>own assets legally</li>
+        <li>enter contracts</li>
+        <li>acquisition-ready structure</li>
+      </ul>
+    </div>
+
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value high">High</span>
+    </div>
+
+  </div>
 </div>
-                <ul className="card-list">
-                  <li>clean company structure</li>
-                  <li>clear ownership and responsibilities</li>
-                  <li>contracts and compliance buyers expect</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/tax2.png" className="box-icon" alt="Tax" />
-  <h3 className="sub-heading">Tax</h3>
-</div>
-                <ul className="card-list">
-                  <li>compliant accounting</li>
-                  <li>transparent financial records</li>
-                  <li>long-term tax structure</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/company2.png" className="box-icon" alt="Company" />
-  <h3 className="sub-heading">Company Registration</h3>
-</div>
-                <ul className="card-list">
-                  <li>own assets</li>
-                  <li>enter contracts</li>
-                  <li>be acquisition-ready later</li>
-                </ul>
-              </div>
-
-              <span className="tag high">High</span>
-            </div>
 
             {/* BLUE CARD */}
-            <div className="rf-card">
-              <div className="inner-box blue-box">
-                <img src="/assets/mvp.png" className="card-icon" />
+           <div className="rf-card">
+  <div className="inner-box blue-box multi-section-card">
 
-                <div className="title-with-icon">
-  <img src="/assets/mvp1.png" className="box-icon" alt="MVP" />
-  <h3>MVP Development</h3>
+    <img src="/assets/mvp.png" className="card-icon" />
+
+    {/* MVP */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/mvp1.png" className="box-icon" />
+        <h3>MVP Development</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>impacts valuation</li>
+      </ul>
+    </div>
+
+    {/* HR */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/hr1.png" className="box-icon" />
+        <h3>HR / Talent</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>strong team increases value</li>
+      </ul>
+    </div>
+
+    {/* SOCIAL */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/social1.png" className="box-icon" />
+        <h3>Social Media Marketing</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>brand presence</li>
+        <li>credibility building</li>
+      </ul>
+    </div>
+
+    {/* EVENTS */}
+    <div className="section-group">
+      <div className="title-with-icon">
+        <img src="/assets/event1.png" className="box-icon" />
+        <h3>Events</h3>
+      </div>
+      <ul className="card-sublist">
+        <li>networking</li>
+        <li>partnerships</li>
+      </ul>
+    </div>
+
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value mid">Moderate</span>
+    </div>
+
+  </div>
 </div>
-                <ul className="card-sublist">
-                  <li>product or tech impacts valuation</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/hr1.png" className="box-icon" alt="HR" />
-  <h3 className="sub-heading">HR / Talent</h3>
-</div>
-                <ul className="card-sublist">
-                  <li>build strong team</li>
-                  <li>key roles increase company value</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/social1.png" className="box-icon" alt="Social Media" />
-  <h3 className="sub-heading">Social Media Marketing</h3>
-</div>
-                <ul className="card-sublist">
-                  <li>positioning & credibility</li>
-                  <li>brand presence</li>
-                </ul>
-
-                <div className="title-with-icon">
-  <img src="/assets/event1.png" alt="Events" className="box-icon" />
-  <h3 className="sub-heading">Events</h3>
-</div>
-                <ul className="card-sublist">
-                  <li>corporate networking</li>
-                  <li>strategic partnerships</li>
-                </ul>
-              </div>
-
-              <span className="tag mid">Moderate</span>
-            </div>
-
             {/* ORANGE CARD */}
-            <div className="rf-card optional">
-              <div className="inner-box">
-                <img src="/assets/service.png" className="card-icon" />
+ <div className="rf-card optional">
+  <div className="inner-box multi-section-card">
 
-                <h3>Optional Services</h3>
-                <ul className="card-sublist">
-                  <li>Idea Validation – usually not needed</li>
-                </ul>
-              </div>
+    <img src="/assets/service.png" className="card-icon" />
 
-              <span className="tag low">Least</span>
-            </div>
+    <div className="section-group">
+      <div className="title-with-icon">
+        <h3>Optional Services</h3>
+      </div>
 
+      <ul className="card-sublist">
+        <li>Idea validation – not needed here</li>
+        <li>extra services only if required</li>
+      </ul>
+    </div>
+
+    <div className="importance-pod">
+      <span className="label">Importance</span>
+      <span className="value low">Least</span>
+    </div>
+
+  </div>
+</div>
           </div>
         </div>
 
