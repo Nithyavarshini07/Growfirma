@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -14,46 +18,59 @@ html, body {
   overflow-y: auto !important;
 }
 
+/* Titles */
+h3 {
+  font-size: 18px;
+}
+
 /* CONTAINER */
-.rf-container {
+.mvp-container {
   padding: 30px;
   padding-left: 110px;
   min-height: 100vh;
 }
 
+.mvp-main {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
 /* NAV */
 .rf-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;  /* keeps logo left */
   padding: 10px 40px;
-  box-sizing: border-box;
 }
 
 .logo img {
   height: 40px;
 }
 
-/* STEPS */
-.steps {
+/* mvp-mvp-steps */
+.mvp-steps {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
-  margin: 0 auto;
-}
 
-.steps span {
+  width: 100%;
+  margin: 15px 0 25px 0;
+
+  position: relative;   /* IMPORTANT FIX */
+}
+.mvp-steps span {
   white-space: nowrap;
   color: #aaa;
 }
 
-.steps .active {
+.mvp-steps .active {
   color: #8cff00;
   border-bottom: 2px solid #8cff00;
 }
 
 /* LEFT TITLE */
-.rf-left h2 {
+.mvp-left h2 {
   font-size: 28px;
   font-weight: 700;
   color: #8cff00;
@@ -69,17 +86,48 @@ html, body {
   margin-bottom: 30px;
 }
 
+/* ===== RIGHT SIDE FONT SAME AS REGISTER ===== */
+.mvp-right {
+  font-size: 16px;
+   flex: 1;
+  overflow: hidden; 
+
+  min-width: 300px;
+  max-width: 380px;
+}
+
+.mvp-right h4 {
+  font-size: 18px;
+}
+
+.mvp-right p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mvp-right li {
+  font-size: 16px;
+}
+
+/* Progress % */
+.progress-circle span {
+  font-size: 16px;
+}
+
 /* MAIN */
-.rf-main {
+.mvp-steps {
   display: flex;
   gap: 30px;
 }
 
 /* LEFT PANEL */
-.rf-left {
+.mvp-left {
   flex: 2;
   position: relative;
+  flex: 2;
+  min-width: 0;   /* 🔥 prevents overflow */
 }
+
 
 /* TIMELINE */
 .timeline {
@@ -148,14 +196,25 @@ h3 {
   margin: 0;
 }
 
-
+.what-text,
+.who-list li {
+  font-size: 16px;
+}
+.info-box p,
+.info-box li {
+  font-size: 16px !important;
+}
+.info-img {
+  display: block;
+}
 
 .card-desc,
 .card-note,
 .card-sublist li {
-  font-size: 15px;
-  color: #cfcfcf;
+   font-size: 15px;
   line-height: 1.4;
+  color: #cfcfcf;
+
 }
 
 /* LIST */

@@ -24,6 +24,8 @@ html, body {
   font-family: "Inter", sans-serif;
   font-size: 20px;
 }
+
+
 .card-row {
   display: grid;
   grid-template-columns: 80px 1fr; /* icon column + content column */
@@ -264,6 +266,33 @@ html, body {
 }
 .rf-right {
   flex: 1;
+  
+}
+/* ===== RIGHT SIDE FONT REDUCTION ===== */
+
+.rf-right {
+  font-size: 12px;   /* 🔥 base font size for everything */
+}
+
+/* Titles */
+.rf-right h4 {
+  font-size: 14px;
+}
+
+/* Paragraphs */
+.rf-right p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* List items */
+.rf-right li {
+  font-size: 10px;
+}
+
+/* Percentage inside circle */
+.rf-right .progress-circle span {
+  font-size: 14px;
 }
 .rf-left h2,
 .rf-left .desc {
@@ -651,13 +680,11 @@ html, body {
 }
 .info-box p,
 .info-box li {
-  font-size: 18px !important;
   font-family: 'Inter', sans-serif !important;
   line-height: 1.6;
     margin-bottom: 10px;
   line-height: 1.5;
-
-
+  font-size: 16px !important;
 }
 
 .side-icons {

@@ -201,6 +201,32 @@ h3 {
   margin-bottom: 15px;
 }
 
+/* 🔥 RIGHT SIDE FONT SIZE - SIDE HUSTLE */
+.rf-right {
+  font-size: 16px;
+}
+
+/* Titles */
+.rf-right h4 {
+  font-size: 18px;
+}
+
+/* Paragraphs */
+.rf-right p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* List */
+.rf-right li {
+  font-size: 16px;
+}
+
+/* Circle percentage */
+.progress-circle span {
+  font-size: 18px;
+}
+
 /* PROGRESS */
 .progress-circle {
   width: 90px;

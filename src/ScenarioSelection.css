@@ -16,6 +16,12 @@ body {
   height: 100vh;
   background: #0b1320;
 }
+.scenario-box .desc {
+  max-width: 900px !important;   /* 🔥 force width */
+  width: 100% !important;
+  white-space: normal !important;
+  line-height: 1.5;
+}
 
 /* WRAPPER */
 .scenario-wrapper {
@@ -25,6 +31,7 @@ body {
   padding: 20px 40px;
   box-sizing: border-box;
   overflow: hidden; /* No page scroll */
+
 }
 
 /* NAVBAR */
@@ -74,6 +81,7 @@ body {
   height: 100%;            /* Fills the outer wrapper */
   overflow: hidden;        /* No scrolling allowed */
 }
+
 /* TITLE */
 .scenario-box h2 {
   margin-bottom: 10px;
@@ -89,12 +97,16 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-style: italic;
-  max-width: 800px;
-  font-size: 14px; 
+  font-size: 13px;
+  line-height: 1.6;
   margin-bottom: 15px;
+
+  /* This forces the wrap */
+  display: block !important;
   width: 100%;
-  line-height: 1.4;
-  
+  max-width: none;
+  width: fit-content !important; 
+  text-align: left !important;
 }
 
 
@@ -122,11 +134,14 @@ body {
   box-sizing: border-box;
   position: relative;
   /* 🔥 This gap controls space between Icon Box, Title, and Paragraph */
-  gap: 12px;                
+  gap: 12px;       
+  cursor: pointer;
+  transition: 0.2s;         
 }
 .scenario-box h2 {
   font-size: 20px;
   margin-bottom: 5px;
+  
 }
 
 .scenario-card h3 {
@@ -147,7 +162,7 @@ body {
 
 /* HOVER */
 .scenario-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.02);
 }
 
 /* SELECTED */
@@ -163,6 +178,8 @@ body {
   right: 10px;
   color: #8cff00;
   font-size: 14px;
+    width: 18px;
+  height: 18px;
 }
 
 /* BUTTONS */
@@ -351,8 +368,8 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 18px;
-  height: 18px;
+  width: 28px;   /* 🔥 increased */
+  height: 28px;
 }
 
 .tick img {

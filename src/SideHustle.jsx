@@ -42,13 +42,17 @@ function SideHustle() {
           <img src="/assets/logo.png" alt="logo" />
         </div>
 
-        <div className="steps">
-          <span onClick={() => navigate("/scenario")} className="clickable">
-            Scenario Selection
-          </span>
-          <span className="active">Company Profile</span>
-          <span>Goals & Needs</span>
-        </div>
+<div className="steps">
+  <span
+    className="active clickable"
+    onClick={() => navigate("/scenario")}
+  >
+    Scenario Selection
+  </span>
+
+  <span>Company Profile</span>
+  <span>Goals & Needs</span>
+</div>
       </div>
 
       {/* MAIN */}

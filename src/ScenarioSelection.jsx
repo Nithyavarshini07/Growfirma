@@ -20,27 +20,23 @@ function ScenarioSelection() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const navigate = useNavigate();
 
-  const goBackToLogin = () => {
-    navigate("/login");
+  // 🔥 HANDLE CARD CLICK (Tick + Navigate)
+  const handleCardClick = (card, i) => {
+    setSelectedIndex(i); // show tick
+
+    setTimeout(() => {
+      const title = card.title;
+
+      if (title === "Register First") navigate("/register-first");
+      else if (title === "MVP First") navigate("/mvp-first");
+      else if (title === "Exit -Oriented") navigate("/exit-oriented");
+      else if (title === "Revenue First") navigate("/revenue-first");
+      else if (title === "Side - hustle") navigate("/side-hustle");
+      else {
+        alert("Page not built yet for this scenario");
+      }
+    }, 300); // delay to show tick
   };
-
-const handleContinue = () => {
-  if (selectedIndex === null) {
-    alert("Please select a scenario");
-    return;
-  }
-
-  const title = cards[selectedIndex].title;
-
-  if (title === "Register First") navigate("/register-first");
-  else if (title === "MVP First") navigate("/mvp-first");
-  else if (title === "Exit -Oriented") navigate("/exit-oriented");
-  else if (title === "Revenue First") navigate("/revenue-first");
-  else if (title === "Side - hustle") navigate("/side-hustle");
-  else {
-    alert("Page not built yet for this scenario");
-  }
-};
 
   return (
     <div className="scenario-wrapper">
@@ -54,8 +50,8 @@ const handleContinue = () => {
         <div className="steps">
           <span className="active">Scenario Selection</span>
           <span onClick={() => navigate("/company-profile")}>
-  Company Profile
-</span>
+            Company Profile
+          </span>
           <span>Goals & Needs</span>
         </div>
       </div>
@@ -66,17 +62,16 @@ const handleContinue = () => {
         <h2>Select Your Path</h2>
 
         <p className="desc">
-          Every greatest venture starts with a clear direction. Choose the scenario that
-          best describes your current journey to customize your fintech experience.
-        </p>
-
+ <i> Every greatest venture starts with a clear direction.<br />
+  Choose the scenario that best describes your current journey to customize your fintech experience.</i>
+</p>
         {/* GRID */}
         <div className="scenario-grid">
           {cards.map((card, i) => (
             <div
               key={i}
               className={`scenario-card ${selectedIndex === i ? "selected" : ""}`}
-              onClick={() => setSelectedIndex(i)}
+              onClick={() => handleCardClick(card, i)}
             >
               {/* ICON */}
               <div className="icon-box">
@@ -99,17 +94,6 @@ const handleContinue = () => {
               )}
             </div>
           ))}
-        </div>
-
-        {/* BUTTONS */}
-        <div className="scenario-actions">
-          <button className="back-btn" onClick={goBackToLogin}>
-            Back
-          </button>
-
-          <button className="continue-btn" onClick={handleContinue}>
-            Continue
-          </button>
         </div>
 
       </div>

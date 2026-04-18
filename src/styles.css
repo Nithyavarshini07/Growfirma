@@ -4,19 +4,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-height: 100vh;
 
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0b1320;
+
   color: white;
   padding: 0;
   overflow-x: hidden;
   height: 100%;
   overflow: hidden;
+   background: #020d1f; 
 }
 
 /* LAYOUT */
@@ -91,13 +91,18 @@ body {
 
 .form-box {
     width: 100%;
-  background: #0a1a2f;
+
   border-radius: 20px;
   color: white;
   text-align: center;
-   padding: 20px;
+
   max-height: 90vh;
   overflow: hidden;
+
+  padding: 30px;
+  background: #0a1a2f;   /* ✅ same as page 2 */
+  border: 1px solid #2a3a55;
+  
 
   /* 🔥 glow animation */
   animation: glowPulse 2.5s infinite ease-in-out;
@@ -136,15 +141,6 @@ body {
   gap: 10px;
 }
 
-.social button {
-  flex: 1;
-  padding: 10px;
-  background: transparent;
-  border: 1px solid #333;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
 
 .social button {
   display: flex;
@@ -158,6 +154,23 @@ body {
   color: white;
   border-radius: 8px;
   cursor: pointer;
+
+  background-color: transparent !important; /* Forces transparency */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Change border and text/icon color to green when clicked/focused */
+input:focus, 
+.social button:focus,
+.social button:active {
+  outline: none;
+  border-color: #8cff00; /* Green border */      /* Optional: turns text/icon green too */
+}
+
+
+/* Specific fix for the password eye icon to turn green on click */
+.password-field:focus-within .toggle-password {
+  color: #8cff00;
 }
 
 .social img {
@@ -180,13 +193,13 @@ input {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
-  background: transparent;
+  background: #111927;   /* ✅ your desired color */
   border: 1px solid #333;
   border-radius: 10px;
   color: white;
-  box-sizing: border-box; /* ✅ important fix */
-
+  box-sizing: border-box;
 }
+
 
 /* FIX ROW INPUTS */
 .row input {

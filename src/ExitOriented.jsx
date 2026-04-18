@@ -51,20 +51,17 @@ function ExitOriented() {
         })}
       </div>
 
-      {/* NAV */}
-      <div className="rf-nav">
-        <div className="logo">
-          <img src="/assets/logo.png" />
-        </div>
+<div className="steps">
+  <span
+    className="active clickable"
+    onClick={() => navigate("/scenario")}
+  >
+    Scenario Selection
+  </span>
 
-        <div className="steps">
-          <span onClick={() => navigate("/scenario")} className="clickable">
-            Scenario Selection
-          </span>
-          <span className="active">Company Profile</span>
-          <span>Goals & Needs</span>
-        </div>
-      </div>
+  <span>Company Profile</span>
+  <span>Goals & Needs</span>
+</div>
 
       {/* MAIN */}
       <div className="rf-main">

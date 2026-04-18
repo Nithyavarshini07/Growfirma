@@ -38,7 +38,7 @@ function MVPFirst() {
   ];
 
   return (
-    <div className="rf-container">
+    <div className="mvp-container">
 
       {/* LEFT ICON SIDEBAR */}
       <div className="side-icons">
@@ -55,25 +55,22 @@ function MVPFirst() {
         })}
       </div>
 
-      {/* NAV */}
-      <div className="rf-nav">
-        <div className="logo">
-          <img src="/assets/logo.png" alt="logo" />
-        </div>
+<div className="mvp-steps">
+  <span
+    className="active clickable"
+    onClick={() => navigate("/scenario")}
+  >
+    Scenario Selection
+  </span>
 
-        <div className="steps">
-          <span onClick={() => navigate("/scenario")} className="clickable">
-            Scenario Selection
-          </span>
-          <span className="active">Company Profile</span>
-          <span>Goals & Needs</span>
-        </div>
-      </div>
+  <span>Company Profile</span>
+  <span>Goals & Needs</span>
+</div>
 
-      <div className="rf-main">
+      <div className="mvp-main">
 
         {/* LEFT */}
-        <div className="rf-left">
+        <div className="mvp-left">
           <h2>MVP First</h2>
           <p className="desc">
             Drive growth by letting the product deliver value and attract users.
