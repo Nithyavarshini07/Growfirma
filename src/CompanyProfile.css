@@ -77,13 +77,23 @@ body {
 
 .side-doc-box {
   background: #151e2d;
-  border: 1px solid #2d3848;
+  border: 1px solid #7ae278;
   padding: 0 15px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 50px;  /* Adjust based on your design */
+  height: 50px;
+  margin-top: 10px;
 }
+
+.doc-icon {
+  width: 24px;   /* Size of the icon */
+  height: 24px;
+  object-fit: contain; /* Prevents stretching */
+}
+
 
 .main-banner-inner {
   flex-grow: 1;
@@ -113,6 +123,40 @@ body {
 /* GRID LAYOUT */
 /* ... keep your imports and root variables ... */
 
+.banner-status-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.status-img, 
+.status-img-dim, 
+.status-img-active {
+  /* 👇 Slightly increased from 20px to 24px */
+  width: 24px;       
+  height: 24px;
+  
+  object-fit: contain;
+  
+  /* Ensures sharpness on high-res displays */
+  image-rendering: -webkit-optimize-contrast; 
+}
+
+/* For the inactive/background icons */
+.status-img-dim {
+  opacity: 0.6;
+  /* Optional: grayscale to make it look truly "disabled" */
+  filter: grayscale(100%);
+}
+
+/* For the active/highlighted icon */
+.status-img-active {
+  /* Blue glow to match your previous rocket emoji style */
+  filter: drop-shadow(0 0 8px rgba(77, 163, 255, 0.8));
+  
+  /* If your PNG is white and you want to force it to blue via CSS: */
+  /* filter: invert(56%) sepia(85%) saturate(1458%) hue-rotate(185deg) brightness(101%) contrast(101%); */
+}
 .grid {
   display: grid;
   grid-template-columns: 1.8fr 1fr;

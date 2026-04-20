@@ -190,7 +190,7 @@ html, body {
   width: 3px;
   
   
-  height: calc(100% + 600px); 
+  height: calc(45% + 600px); 
   
   /* Ensure the gradient stays solid at the end */
   background: linear-gradient(to bottom, 

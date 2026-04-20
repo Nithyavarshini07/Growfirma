@@ -19,38 +19,40 @@ function ExitOriented() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const icons = [
-    "/assets/fund.png",
-    "/assets/register.png",
-    "/assets/community.png",
-    "/assets/side.png",
-    "/assets/mvp.png",
-    "/assets/exit.png",
-    "/assets/revenue.png",
-    "/assets/corporate.png",
-    "/assets/grant.png",
-    "/assets/accelerator.png",
-    "/assets/others.png",
-  ];
+  const navConfig = [
+  { src: "/assets/fund.png", path: "/fundraising-first" },
+  { src: "/assets/register.png", path: "/register-first" },
+  { src: "/assets/community.png", path: "/community-sidehustle" },
+  { src: "/assets/side.png", path: "/side-hustle" },
+  { src: "/assets/mvp.png", path: "/mvp-first" },
+  { src: "/assets/exit.png", path: "/exit-oriented" },
+  { src: "/assets/revenue.png", path: "/revenue-first" },
+  { src: "/assets/corporate.png", path: "/corporate" },
+  { src: "/assets/grant.png", path: "/grant" },
+  { src: "/assets/accelerator.png", path: "/accelerator" },
+  { src: "/assets/others.png", path: "/others" },
+];
 
   return (
     <div className="mvp-page-root">
       <div className="mvp-container">
 
-        {/* SIDEBAR */}
         <div className="side-icons">
-          {icons.map((icon, index) => {
-            const isActive = index === 5;
-            return (
-              <img
-                key={index}
-                src={icon}
-                alt=""
-                className={isActive ? "active-icon" : ""}
-              />
-            );
-          })}
-        </div>
+  {navConfig.map((item, index) => {
+    // Check if the current URL matches the item path
+    const isActive = location.pathname === item.path;
+
+    return (
+      <img
+        key={index}
+        src={item.src}
+        alt="nav-icon"
+        className={`${isActive ? "active-icon" : ""} clickable`}
+        onClick={() => navigate(item.path)}
+      />
+    );
+  })}
+</div>
 
         {/* STEPS */}
         <div className="mvp-nav">

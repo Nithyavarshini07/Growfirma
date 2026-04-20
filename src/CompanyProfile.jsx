@@ -34,7 +34,9 @@ const CompanyProfile = () => {
 
       {/* TOP BANNER */}
       <div className="banner-outer-wrapper">
-        <div className="side-doc-box">📄</div>
+        <div className="side-doc-box">
+  <img src="/assets/file.png" alt="document icon" className="doc-icon" />
+</div>
         <div className="main-banner-inner">
           <div>
             <div className="banner-top-line">
@@ -44,10 +46,15 @@ const CompanyProfile = () => {
             <p className="banner-subtext">Focus on the legal compliance and foundational setup.</p>
           </div>
           <div className="banner-status-icons">
-            <span style={{ opacity: 0.3 }}>🏢</span>
-            <span>✏️</span>
-            <span style={{ color: '#4da3ff' }}>🚀</span>
-          </div>
+  {/* Opacity 0.3 replaced with a class or inline style */}
+  <img src="/assets/pencil1.png" alt="Company" className="status-img-dim" />
+  
+  {/* Standard Icon */}
+  <img src="/assets/pencil.png" alt="Edit" className="status-img" />
+  
+  {/* Instead of blue color, ensure your PNG is already blue or use a filter */}
+  <img src="/assets/pencil3.png" alt="Launch" className="status-img-active" />
+</div>
         </div>
       </div>
 
