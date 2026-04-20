@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 :root {
   --bg-dark: #050b16;
   --card-bg: #111a2e;
@@ -11,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--bg-dark);
   color: white;
 }
@@ -51,7 +50,8 @@ body {
 
 .nav-item {
   color: #ffffff;
-  font-size: 14px;
+   font-weight: 500;
+  font-size: 13px;
   cursor: pointer;
   opacity: 0.6;
   white-space: nowrap;
@@ -122,9 +122,11 @@ body {
 }
 
 .form-card {
-  background: #111a2e;
+   background: linear-gradient(145deg, #0f172a, #0b1220);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 18px;
+  border: 1px solid #1a2332;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   /* CRITICAL: Use flex column to handle internal spacing */
   display: flex;
   flex-direction: column;
@@ -165,21 +167,19 @@ textarea {
 }
 
 .side-panel-card {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  margin-bottom: 20px;
+  background: linear-gradient(145deg, #0f172a, #0b1220);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #1a2332;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .form-title {
   color: var(--neon-green);
-  font-size: 32px;
-  font-weight: 800; /* Extra bold */
-  font-style: italic;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: -0.5px;;
 }
 
 .form-description {
@@ -194,13 +194,14 @@ textarea {
 
 input, select, textarea {
   width: 100%;
-  background: #000 !important;
-  border: 1px solid var(--border-color);
+  background: #0a1324;
+  border: 1px solid #1a2332;
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   box-sizing: border-box;
   font-family: inherit;
+  transition: all 0.2s ease;
 }
 
 textarea {
@@ -217,20 +218,19 @@ textarea {
   gap: 10px; /* Space between buttons */
   width: 100%; }
 .btn-toggle {
-  flex: 1; /* Makes both buttons equal width */
+  flex: 1;
   background: #0a1324;
-  border: 1px solid var(--border-color);
-  color: white;
+  border: 1px solid #1a2332;
+  color: #a3b1cc;
   padding: 12px 0;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s ease;
+  font-weight: 500;
 }
 .btn-toggle.active {
-  background: rgba(178, 255, 89, 0.1);
-  border: 1.5px solid var(--neon-green);
-  color: white;
+  background: rgba(178, 255, 89, 0.08);
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
 }
 
 /* FOOTER */
@@ -357,7 +357,7 @@ textarea {
 
 /* SVG specific styling to match the glow in the image */
 svg circle:nth-child(2) {
-  filter: drop-shadow(0 0 4px rgba(178, 255, 89, 0.3));
+  filter: drop-shadow(0 0 6px rgba(178, 255, 89, 0.6));
 }
 
 
@@ -391,4 +391,20 @@ svg circle:nth-child(2) {
   font-size: 12px;
   color: var(--text-gray);
   line-height: 1.4;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border: 1px solid var(--neon-green);
+  box-shadow: 0 0 8px rgba(178, 255, 89, 0.2);
+}
+
+label {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.form-description {
+  font-size: 13px;
+  color: #94a3b8;
 }
